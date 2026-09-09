@@ -1,0 +1,452 @@
+{% extends "base.html" %}
+
+{% block title %}Compare: Traditional RAG vs Vectorless RAG — {{ document.filename }}{% endblock %}
+
+{% block content %}
+<div class="page-header comparison-header">
+    <div class="header-breadcrumb">
+        <a href="{{ url_for('main.documents') }}">Documents</a> &rsaquo;
+        <a href="{{ url_for('main.query', doc_id=document.id) }}">{{ document.filename }}</a> &rsaquo;
+        <span>Comparison Arena</span>
+    </div>
+    <h1 id="compare-page-title">Traditional RAG <span class="vs-badge">VS</span> Vectorless RAG</h1>
+    <p class="page-subtitle">
+        Document: <strong>{{ document.filename }}</strong>
+        <span class="doc-badge-group">
+            <span class="status-badge {% if document.traditional_indexed %}status-indexed{% else %}status-uploaded{% endif %}" id="badge-trad-status">
+                {% if document.traditional_indexed %}📐 Traditional Index: Ready{% else %}📐 Traditional Index: Missing{% endif %}
+            </span>
+            <span class="status-badge {% if document.vectorless_indexed %}status-indexed{% else %}status-uploaded{% endif %}" id="badge-vless-status">
+                {% if document.vectorless_indexed %}🌳 Vectorless Index: Ready{% else %}🌳 Vectorless Index: Missing{% endif %}
+            </span>
+        </span>
+    </p>
+</div>
+
+<!-- Index Status Banner (if either is not indexed) -->
+<div class="index-actions-banner" id="index-actions-banner" {% if document.traditional_indexed and document.vectorless_indexed %}style="display: none;"{% endif %}>
+    <div class="banner-content">
+        <h3>⚡ Index Setup Required</h3>
+        <p>Both indexing systems must be initialized to run side-by-side comparison benchmarks.</p>
+    </div>
+    <div class="banner-buttons">
+        {% if not document.traditional_indexed %}
+        <button class="btn btn-secondary btn-index-action" id="btn-build-traditional" onclick="buildTraditional()">
+            📐 Build Traditional Index (Vectors)
+        </button>
+        {% endif %}
+        {% if not document.vectorless_indexed %}
+        <button class="btn btn-primary btn-index-action" id="btn-build-vectorless" onclick="buildVectorless()">
+            🌳 Build Vectorless Index (Tree)
+        </button>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Comparison Query Section -->
+<div class="query-section" id="compare-query-section">
+    <div class="query-input-group">
+        <textarea
+            id="compare-query-input"
+            class="query-input"
+            placeholder="Ask a question to see how both Traditional RAG and Vectorless RAG answer it..."
+            rows="3"
+            maxlength="5000"
+        ></textarea>
+        <button
+            class="btn btn-gradient btn-query"
+            id="btn-run-compare"
+            onclick="runComparison()"
+            {% if not document.traditional_indexed or not document.vectorless_indexed %}disabled{% endif %}
+        >
+            ⚔️ Compare Pipelines
+        </button>
+    </div>
+    <div class="query-hint">
+        Runs both pipelines simultaneously: Traditional RAG (chunks + NVIDIA embeddings + cosine similarity) vs Vectorless RAG (tree reasoning).
+    </div>
+</div>
+
+<!-- Loading State -->
+<div class="comparison-loading" id="compare-loading" style="display: none;">
+    <div class="loading-spinner"></div>
+    <h3 class="loading-title" id="compare-loading-title">Benchmarking Both Pipelines...</h3>
+    <p class="loading-subtitle" id="compare-loading-sub">Generating embeddings & navigating document tree in parallel...</p>
+    <div class="pipeline-progress-cards">
+        <div class="mini-progress-card" id="trad-progress">
+            <span class="pip-icon">📐</span>
+            <span class="pip-name">Traditional RAG</span>
+            <span class="pip-status" id="trad-pip-status">Embedding query & calculating cosine distances...</span>
+        </div>
+        <div class="mini-progress-card" id="vless-progress">
+            <span class="pip-icon">🌳</span>
+            <span class="pip-name">Vectorless RAG</span>
+            <span class="pip-status" id="vless-pip-status">Traversing document tree with LLM reasoning...</span>
+        </div>
+    </div>
+</div>
+
+<!-- Side-by-Side Results Arena -->
+<div class="comparison-results" id="compare-results" style="display: none;">
+    <!-- Scorecard Banner -->
+    <div class="scorecard-container" id="scorecard-container">
+        <div class="scorecard-item">
+            <span class="scorecard-label">User Query</span>
+            <span class="scorecard-value query-echo" id="scorecard-query"></span>
+        </div>
+        <div class="scorecard-item">
+            <span class="scorecard-label">Traditional Latency</span>
+            <span class="scorecard-value" id="scorecard-trad-time">0 ms</span>
+        </div>
+        <div class="scorecard-item">
+            <span class="scorecard-label">Vectorless Latency</span>
+            <span class="scorecard-value" id="scorecard-vless-time">0 ms</span>
+        </div>
+        <div class="scorecard-item">
+            <span class="scorecard-label">Speed Advantage</span>
+            <span class="scorecard-value speed-winner" id="scorecard-winner">-</span>
+        </div>
+    </div>
+
+    <!-- Dual Column Arena -->
+    <div class="arena-columns">
+        <!-- COLUMN 1: Traditional RAG -->
+        <div class="arena-column column-traditional" id="column-traditional">
+            <div class="column-header">
+                <div class="col-title-group">
+                    <span class="col-icon">📐</span>
+                    <div>
+                        <h2 class="col-title">Traditional Vector RAG</h2>
+                        <span class="col-subtitle">Chunks + NVIDIA Embeddings + Cosine Sim</span>
+                    </div>
+                </div>
+                <div class="col-metrics">
+                    <span class="metric-pill" id="trad-time-pill">0 ms</span>
+                    <span class="confidence-badge" id="trad-confidence-badge">MEDIUM</span>
+                </div>
+            </div>
+
+            <!-- Answer Card -->
+            <div class="arena-card answer-card">
+                <h3 class="card-heading">Generated Answer</h3>
+                <div class="answer-content markdown-body" id="trad-answer-body"></div>
+            </div>
+
+            <!-- Pipeline Trace: Chunks Retrieved -->
+            <div class="arena-card trace-card">
+                <div class="card-header-flex">
+                    <h3 class="card-heading">🔍 Retrieved Chunks (<span id="trad-chunk-count">0</span>)</h3>
+                    <span class="trace-pill">Sorted by Cosine Similarity</span>
+                </div>
+                <div class="chunks-list" id="trad-chunks-list"></div>
+            </div>
+
+            <!-- Context Used -->
+            <div class="arena-card context-card">
+                <details>
+                    <summary class="card-heading clickable-summary">📜 View Concatenated Context Provided to LLM</summary>
+                    <pre class="context-code-block" id="trad-context-block"></pre>
+                </details>
+            </div>
+        </div>
+
+        <!-- COLUMN 2: Vectorless RAG -->
+        <div class="arena-column column-vectorless" id="column-vectorless">
+            <div class="column-header">
+                <div class="col-title-group">
+                    <span class="col-icon">🌳</span>
+                    <div>
+                        <h2 class="col-title">Vectorless RAG</h2>
+                        <span class="col-subtitle">Hierarchical Tree Navigation + Pure Reasoning</span>
+                    </div>
+                </div>
+                <div class="col-metrics">
+                    <span class="metric-pill" id="vless-time-pill">0 ms</span>
+                    <span class="confidence-badge" id="vless-confidence-badge">MEDIUM</span>
+                </div>
+            </div>
+
+            <!-- Answer Card -->
+            <div class="arena-card answer-card">
+                <h3 class="card-heading">Generated Answer</h3>
+                <div class="answer-content markdown-body" id="vless-answer-body"></div>
+            </div>
+
+            <!-- Pipeline Trace: Traversal Steps -->
+            <div class="arena-card trace-card">
+                <div class="card-header-flex">
+                    <h3 class="card-heading">🌳 Reasoning Traversal Path (<span id="vless-step-count">0</span> steps)</h3>
+                    <span class="trace-pill">Hierarchical Decision Trail</span>
+                </div>
+                <div class="traversal-steps" id="vless-steps-list"></div>
+            </div>
+
+            <!-- Sources & Context -->
+            <div class="arena-card context-card">
+                <div class="sources-group" id="vless-sources-group"></div>
+                <details style="margin-top: 10px;">
+                    <summary class="card-heading clickable-summary">📜 View Targeted Section Context</summary>
+                    <pre class="context-code-block" id="vless-context-block"></pre>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- Architectural Deep Dive Comparison -->
+    <div class="architecture-breakdown">
+        <h3>🔬 Architecture Comparison</h3>
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Dimension</th>
+                        <th>Traditional Vector RAG</th>
+                        <th>Vectorless RAG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Index Representation</strong></td>
+                        <td>Dense float32 vectors in high-dimensional embedding space</td>
+                        <td>Hierarchical JSON tree of semantic sections and summaries</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Retrieval Mechanism</strong></td>
+                        <td>K-Nearest Neighbors via Cosine Similarity</td>
+                        <td>LLM-driven iterative navigation and branch exploration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chunk Boundary Issues</strong></td>
+                        <td>⚠️ Sentences/tables can be severed across chunk boundaries</td>
+                        <td>✅ Intact logical sections preserved whole</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Storage & Dependencies</strong></td>
+                        <td>Dense vector indices / vector database required</td>
+                        <td>Zero vector database needed (lightweight JSON tree)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Traceability & Explainability</strong></td>
+                        <td>Black-box numeric similarity score</td>
+                        <td>Clear, human-readable step-by-step reasoning log</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const DOC_ID = "{{ document.id }}";
+    let tradReady = {{ 'true' if document.traditional_indexed else 'false' }};
+    let vlessReady = {{ 'true' if document.vectorless_indexed else 'false' }};
+
+    function updateCompareButtonState() {
+        const btn = document.getElementById('btn-run-compare');
+        if (tradReady && vlessReady) {
+            btn.disabled = false;
+            document.getElementById('index-actions-banner').style.display = 'none';
+        } else {
+            btn.disabled = true;
+        }
+    }
+
+    async function buildTraditional() {
+        const btn = document.getElementById('btn-build-traditional');
+        if (!btn) return;
+        btn.disabled = true;
+        btn.textContent = '⏳ Embedding Chunks...';
+
+        try {
+            const res = await VectorlessRAG.buildTraditionalIndex(DOC_ID);
+            VectorlessRAG.showToast(`Traditional index built (${res.data.chunk_count} chunks)!`, 'success');
+            tradReady = true;
+            const badge = document.getElementById('badge-trad-status');
+            if (badge) {
+                badge.className = 'status-badge status-indexed';
+                badge.textContent = '📐 Traditional Index: Ready';
+            }
+            btn.remove();
+            updateCompareButtonState();
+        } catch (err) {
+            btn.disabled = false;
+            btn.textContent = '📐 Build Traditional Index (Vectors)';
+            VectorlessRAG.showToast(`Traditional indexing failed: ${err.message}`, 'error');
+        }
+    }
+
+    async function buildVectorless() {
+        const btn = document.getElementById('btn-build-vectorless');
+        if (!btn) return;
+        btn.disabled = true;
+        btn.textContent = '⏳ Building Tree...';
+
+        try {
+            const res = await VectorlessRAG.buildIndex(DOC_ID);
+            VectorlessRAG.showToast(`Vectorless tree built (${res.data.node_count} nodes)!`, 'success');
+            vlessReady = true;
+            const badge = document.getElementById('badge-vless-status');
+            if (badge) {
+                badge.className = 'status-badge status-indexed';
+                badge.textContent = '🌳 Vectorless Index: Ready';
+            }
+            btn.remove();
+            updateCompareButtonState();
+        } catch (err) {
+            btn.disabled = false;
+            btn.textContent = '🌳 Build Vectorless Index (Tree)';
+            VectorlessRAG.showToast(`Vectorless indexing failed: ${err.message}`, 'error');
+        }
+    }
+
+    // Submit on Enter
+    document.getElementById('compare-query-input')?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            runComparison();
+        }
+    });
+
+    async function runComparison() {
+        const input = document.getElementById('compare-query-input');
+        const query = input.value.trim();
+
+        if (!query) {
+            VectorlessRAG.showToast('Please type a query to compare.', 'warning');
+            return;
+        }
+
+        const loading = document.getElementById('compare-loading');
+        const results = document.getElementById('compare-results');
+        const btn = document.getElementById('btn-run-compare');
+
+        loading.style.display = 'block';
+        results.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = '⏳ Running Dual Pipelines...';
+
+        try {
+            const response = await VectorlessRAG.compare(query, DOC_ID);
+            const data = response.data;
+
+            loading.style.display = 'none';
+            btn.disabled = false;
+            btn.textContent = '⚔️ Compare Pipelines';
+
+            renderComparison(data);
+        } catch (err) {
+            loading.style.display = 'none';
+            btn.disabled = false;
+            btn.textContent = '⚔️ Compare Pipelines';
+            VectorlessRAG.showToast(`Comparison failed: ${err.message}`, 'error');
+        }
+    }
+
+    function renderComparison(data) {
+        const results = document.getElementById('compare-results');
+        results.style.display = 'block';
+
+        // 1. Scorecard
+        document.getElementById('scorecard-query').textContent = `"${data.query}"`;
+        document.getElementById('scorecard-trad-time').textContent = `${Math.round(data.traditional_time_ms)} ms`;
+        document.getElementById('scorecard-vless-time').textContent = `${Math.round(data.vectorless_time_ms)} ms`;
+
+        const winnerEl = document.getElementById('scorecard-winner');
+        if (data.traditional_time_ms < data.vectorless_time_ms) {
+            const diff = Math.round(data.vectorless_time_ms - data.traditional_time_ms);
+            winnerEl.textContent = `Traditional (+${diff}ms faster)`;
+            winnerEl.style.color = '#38bdf8';
+        } else {
+            const diff = Math.round(data.traditional_time_ms - data.vectorless_time_ms);
+            winnerEl.textContent = `Vectorless (+${diff}ms faster)`;
+            winnerEl.style.color = '#a855f7';
+        }
+
+        // 2. Traditional Column
+        const trad = data.traditional;
+        document.getElementById('trad-time-pill').textContent = `${Math.round(data.traditional_time_ms)} ms`;
+        const tradConf = document.getElementById('trad-confidence-badge');
+        tradConf.textContent = (trad.confidence || 'medium').toUpperCase();
+        tradConf.className = `confidence-badge confidence-${(trad.confidence || 'medium').toLowerCase()}`;
+        document.getElementById('trad-answer-body').innerHTML = VectorlessRAG.formatMarkdown(trad.answer);
+
+        // Chunks
+        const chunksList = document.getElementById('trad-chunks-list');
+        chunksList.innerHTML = '';
+        const retrieved = trad.retrieved_chunks || [];
+        document.getElementById('trad-chunk-count').textContent = retrieved.length;
+
+        retrieved.forEach((c, idx) => {
+            const card = document.createElement('div');
+            card.className = 'chunk-item-card';
+            const pct = Math.round((c.score || 0) * 100);
+            card.innerHTML = `
+                <div class="chunk-item-header">
+                    <span class="chunk-index-badge">#${idx + 1} &bull; Page ${c.page_number}</span>
+                    <span class="chunk-score-badge">Similarity: ${(c.score || 0).toFixed(4)}</span>
+                </div>
+                <div class="similarity-bar-container">
+                    <div class="similarity-bar-fill" style="width: ${Math.max(5, Math.min(100, pct))}%;"></div>
+                </div>
+                <div class="chunk-text-preview">${c.text}</div>
+            `;
+            chunksList.appendChild(card);
+        });
+
+        document.getElementById('trad-context-block').textContent = trad.context_used || 'No context captured';
+
+        // 3. Vectorless Column
+        const vless = data.vectorless;
+        document.getElementById('vless-time-pill').textContent = `${Math.round(data.vectorless_time_ms)} ms`;
+        const vlessConf = document.getElementById('vless-confidence-badge');
+        vlessConf.textContent = (vless.confidence || 'medium').toUpperCase();
+        vlessConf.className = `confidence-badge confidence-${(vless.confidence || 'medium').toLowerCase()}`;
+        document.getElementById('vless-answer-body').innerHTML = VectorlessRAG.formatMarkdown(vless.answer);
+
+        // Traversal Steps
+        const stepsList = document.getElementById('vless-steps-list');
+        stepsList.innerHTML = '';
+        const steps = vless.traversal_path || [];
+        document.getElementById('vless-step-count').textContent = steps.length;
+
+        steps.forEach((step, idx) => {
+            const stepDiv = document.createElement('div');
+            stepDiv.className = `traversal-step step-${step.action}`;
+            const icon = step.action === 'enter' ? '➡️' :
+                         step.action === 'backtrack' ? '↩️' :
+                         step.action === 'select' ? '✅' : '🔵';
+            stepDiv.innerHTML = `
+                <div class="step-header">
+                    <span class="step-number">${idx + 1}</span>
+                    <span class="step-icon">${icon}</span>
+                    <span class="step-title">${step.node_title}</span>
+                    <span class="step-action">${step.action}</span>
+                </div>
+                <div class="step-reasoning">${step.reasoning}</div>
+            `;
+            stepsList.appendChild(stepDiv);
+        });
+
+        // Sources
+        const sourcesGroup = document.getElementById('vless-sources-group');
+        sourcesGroup.innerHTML = '';
+        (vless.sources || []).forEach(src => {
+            const item = document.createElement('div');
+            item.className = 'source-item';
+            if (src.type === 'primary') {
+                item.innerHTML = `<span>📑 Section: <strong>${src.section}</strong> (Pages ${src.pages})</span>`;
+            } else if (src.type === 'traversal_trace') {
+                item.innerHTML = `<span>🗺️ Path: <strong>${src.navigation_path}</strong></span>`;
+            }
+            sourcesGroup.appendChild(item);
+        });
+
+        document.getElementById('vless-context-block').textContent = vless.context_used || 'No context captured';
+
+        // Scroll smoothly to results
+        results.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+{% endblock %}

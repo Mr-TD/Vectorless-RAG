@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}Query — {{ document.filename }} — Vectorless RAG{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 id="query-page-title">Ask a Question</h1>
+    <p class="page-subtitle">
+        Querying: <strong>{{ document.filename }}</strong>
+        {% if document.is_indexed %}
+            <span class="status-badge status-indexed">Indexed</span>
+        {% else %}
+            <span class="status-badge status-uploaded">Not Indexed</span>
+        {% endif %}
+    </p>
+    <div class="header-actions" style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="{{ url_for('main.compare', doc_id=document.id) }}" class="btn btn-secondary" id="btn-goto-compare">
+            ⚔️ Compare with Traditional RAG
+        </a>
+        <a href="{{ url_for('main.documents') }}" class="btn btn-secondary" id="btn-back-docs" style="background: rgba(255,255,255,0.06);">
+            ← Back to Documents
+        </a>
+    </div>
+</div>
+
+{% if not document.is_indexed %}
+<div class="alert alert-warning" id="not-indexed-alert">
+    <strong>⚠️ Document Not Indexed</strong>
+    <p>This document needs to be indexed before you can query it.</p>
+    <button class="btn btn-primary" onclick="buildAndWait()" id="btn-index-first">🔨 Build Index Now</button>
+</div>
+{% endif %}
+
+<!-- Query Input -->
+<div class="query-section" id="query-section">
+    <div class="query-input-group">
+        <textarea
+            id="query-input"
+            class="query-input"
+            placeholder="Ask any question about this document..."
+            rows="3"
+            maxlength="5000"
+            {% if not document.is_indexed %}disabled{% endif %}
+        ></textarea>
+        <button
+            class="btn btn-primary btn-query"
+            id="btn-submit-query"
+            onclick="submitQuery()"
+            {% if not document.is_indexed %}disabled{% endif %}
+        >
+            🔍 Ask
+        </button>
+    </div>
+    <div class="query-hint" id="query-hint">
+        Press Enter to submit. The LLM will navigate the document tree to find your answer.
+    </div>
+</div>
+
+<!-- Loading State -->
+<div class="query-loading" id="query-loading" style="display: none;">
+    <div class="loading-spinner"></div>
+    <p class="loading-text" id="loading-text">Traversing document tree...</p>
+</div>
+
+<!-- Answer Section -->
+<div class="answer-section" id="answer-section" style="display: none;">
+    <!-- Answer Card -->
+    <div class="answer-card" id="answer-card">
+        <div class="answer-header">
+            <h2>Answer</h2>
+            <span class="confidence-badge" id="confidence-badge">medium</span>
+        </div>
+        <div class="answer-body" id="answer-body"></div>
+    </div>
+
+    <!-- Sources Card -->
+    <div class="sources-card" id="sources-card">
+        <h3>📚 Sources</h3>
+        <div class="sources-list" id="sources-list"></div>
+    </div>
+
+    <!-- Traversal Path Card -->
+    <div class="traversal-card" id="traversal-card">
+        <h3>🌳 Traversal Path</h3>
+        <p class="traversal-hint">How the LLM navigated the document tree to find the answer:</p>
+        <div class="traversal-steps" id="traversal-steps"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const DOC_ID = "{{ document.id }}";
+
+    // Handle Enter key in query input
+    document.getElementById('query-input')?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            submitQuery();
+        }
+    });
+
+    function buildAndWait() {
+        const btn = document.getElementById('btn-index-first');
+        btn.disabled = true;
+        btn.textContent = '⏳ Building Index...';
+
+        VectorlessRAG.buildIndex(DOC_ID)
+            .then(data => {
+                VectorlessRAG.showToast(`Index built with ${data.data.node_count} nodes!`, 'success');
+                setTimeout(() => location.reload(), 1000);
+            })
+            .catch(err => {
+                btn.disabled = false;
+                btn.textContent = '🔨 Build Index Now';
+                VectorlessRAG.showToast(`Index build failed: ${err.message}`, 'error');
+            });
+    }
+
+    function submitQuery() {
+        const input = document.getElementById('query-input');
+        const query = input.value.trim();
+
+        if (!query) {
+            VectorlessRAG.showToast('Please enter a question.', 'warning');
+            return;
+        }
+
+        // Show loading
+        const loading = document.getElementById('query-loading');
+        const answer = document.getElementById('answer-section');
+        const btn = document.getElementById('btn-submit-query');
+
+        loading.style.display = 'block';
+        answer.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = '⏳ Thinking...';
+
+        // Animate loading text
+        const loadingTexts = [
+            'Examining document tree...',
+            'Navigating to relevant section...',
+            'Reasoning about the answer...',
+            'Synthesizing response...',
+        ];
+        let textIdx = 0;
+        const textInterval = setInterval(() => {
+            textIdx = (textIdx + 1) % loadingTexts.length;
+            document.getElementById('loading-text').textContent = loadingTexts[textIdx];
+        }, 2000);
+
+        // Submit query
+        VectorlessRAG.query(query, DOC_ID)
+            .then(data => {
+                clearInterval(textInterval);
+                loading.style.display = 'none';
+                btn.disabled = false;
+                btn.textContent = '🔍 Ask';
+
+                displayAnswer(data.data);
+            })
+            .catch(err => {
+                clearInterval(textInterval);
+                loading.style.display = 'none';
+                btn.disabled = false;
+                btn.textContent = '🔍 Ask';
+
+                VectorlessRAG.showToast(`Query failed: ${err.message}`, 'error');
+            });
+    }
+
+    function displayAnswer(data) {
+        const section = document.getElementById('answer-section');
+        section.style.display = 'block';
+
+        // Answer text
+        document.getElementById('answer-body').innerHTML = VectorlessRAG.formatMarkdown(data.answer);
+
+        // Confidence badge
+        const badge = document.getElementById('confidence-badge');
+        badge.textContent = data.confidence.toUpperCase();
+        badge.className = `confidence-badge confidence-${data.confidence}`;
+
+        // Sources
+        const sourcesList = document.getElementById('sources-list');
+        sourcesList.innerHTML = '';
+        if (data.sources && data.sources.length > 0) {
+            data.sources.forEach(source => {
+                const div = document.createElement('div');
+                div.className = 'source-item';
+                if (source.type === 'primary') {
+                    div.innerHTML = `
+                        <span class="source-label">📄 Document:</span>
+                        <span class="source-value">${source.document}</span>
+                        <span class="source-label">📑 Section:</span>
+                        <span class="source-value">${source.section}</span>
+                        <span class="source-label">📃 Pages:</span>
+                        <span class="source-value">${source.pages}</span>
+                    `;
+                } else if (source.type === 'traversal_trace') {
+                    div.innerHTML = `
+                        <span class="source-label">🗺️ Navigation Path:</span>
+                        <span class="source-value">${source.navigation_path}</span>
+                    `;
+                }
+                sourcesList.appendChild(div);
+            });
+        }
+
+        // Traversal path
+        const stepsContainer = document.getElementById('traversal-steps');
+        stepsContainer.innerHTML = '';
+        if (data.traversal_path && data.traversal_path.length > 0) {
+            data.traversal_path.forEach((step, idx) => {
+                const div = document.createElement('div');
+                div.className = `traversal-step step-${step.action}`;
+                const icon = step.action === 'enter' ? '➡️' :
+                             step.action === 'backtrack' ? '↩️' :
+                             step.action === 'select' ? '✅' : '🔵';
+                div.innerHTML = `
+                    <div class="step-header">
+                        <span class="step-number">${idx + 1}</span>
+                        <span class="step-icon">${icon}</span>
+                        <span class="step-title">${step.node_title}</span>
+                        <span class="step-action">${step.action}</span>
+                    </div>
+                    <div class="step-reasoning">${step.reasoning}</div>
+                `;
+                stepsContainer.appendChild(div);
+            });
+        }
+
+        // Scroll to answer
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+{% endblock %}

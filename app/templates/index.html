@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Document — Vectorless RAG{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 id="page-title">Upload Document</h1>
+    <p class="page-subtitle">Upload a PDF or text file to begin building a reasoning-based index.</p>
+</div>
+
+<div class="upload-section">
+    <!-- Drop Zone -->
+    <div class="drop-zone" id="drop-zone">
+        <div class="drop-zone-content">
+            <div class="drop-icon">📄</div>
+            <h2>Drag & Drop your document here</h2>
+            <p>or click to browse files</p>
+            <p class="drop-hint">Supports: PDF, TXT, MD (Max 50MB)</p>
+            <input type="file" id="file-input" accept=".pdf,.txt,.md" hidden>
+        </div>
+    </div>
+
+    <!-- Upload Progress -->
+    <div class="upload-progress" id="upload-progress" style="display: none;">
+        <div class="progress-header">
+            <span class="progress-filename" id="progress-filename"></span>
+            <span class="progress-status" id="progress-status">Uploading...</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Upload Result -->
+    <div class="upload-result" id="upload-result" style="display: none;">
+        <div class="result-icon" id="result-icon">✅</div>
+        <h3 id="result-title">Upload Successful</h3>
+        <p id="result-message"></p>
+        <div class="result-meta" id="result-meta"></div>
+        <div class="result-actions" id="result-actions">
+            <button class="btn btn-primary" id="btn-build-index" onclick="buildIndex()">
+                🔨 Build Index
+            </button>
+            <a href="/documents" class="btn btn-secondary" id="btn-view-docs">
+                📋 View Documents
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works Section -->
+<div class="info-section">
+    <h2>How Vectorless RAG Works</h2>
+    <div class="info-cards">
+        <div class="info-card">
+            <div class="card-icon">📤</div>
+            <h3>1. Upload</h3>
+            <p>Upload your document. The system extracts text content while preserving the original structure.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-icon">🌳</div>
+            <h3>2. Index</h3>
+            <p>An LLM analyzes the document and builds a hierarchical tree index — like an intelligent table of contents.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-icon">🔍</div>
+            <h3>3. Query</h3>
+            <p>Ask questions. The LLM navigates the tree like a researcher, finding the exact section with the answer.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Store the last uploaded document ID for index building
+    let lastUploadedDocId = null;
+
+    // Initialize upload functionality
+    document.addEventListener('DOMContentLoaded', () => {
+        initUpload();
+    });
+
+    function buildIndex() {
+        if (!lastUploadedDocId) return;
+        const btn = document.getElementById('btn-build-index');
+        btn.disabled = true;
+        btn.textContent = '⏳ Building Index...';
+
+        VectorlessRAG.buildIndex(lastUploadedDocId)
+            .then(data => {
+                btn.textContent = '✅ Index Built!';
+                VectorlessRAG.showToast(`Index built with ${data.data.node_count} nodes.`, 'success');
+                // Redirect to query page after short delay
+                setTimeout(() => {
+                    window.location.href = `/query/${lastUploadedDocId}`;
+                }, 1500);
+            })
+            .catch(err => {
+                btn.disabled = false;
+                btn.textContent = '🔨 Build Index';
+                VectorlessRAG.showToast(`Index build failed: ${err.message}`, 'error');
+            });
+    }
+
+    function initUpload() {
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+
+        // Click to browse
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        // File selected via input
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFileUpload(e.target.files[0]);
+            }
+        });
+
+        // Drag and drop events
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            if (e.dataTransfer.files.length > 0) {
+                handleFileUpload(e.dataTransfer.files[0]);
+            }
+        });
+    }
+
+    function handleFileUpload(file) {
+        // Validate on client side
+        const allowedTypes = ['.pdf', '.txt', '.md'];
+        const ext = '.' + file.name.split('.').pop().toLowerCase();
+        if (!allowedTypes.includes(ext)) {
+            VectorlessRAG.showToast(`File type ${ext} is not supported.`, 'error');
+            return;
+        }
+
+        // Show progress
+        const dropZone = document.getElementById('drop-zone');
+        const progress = document.getElementById('upload-progress');
+        const result = document.getElementById('upload-result');
+
+        dropZone.style.display = 'none';
+        progress.style.display = 'block';
+        result.style.display = 'none';
+
+        document.getElementById('progress-filename').textContent = file.name;
+        document.getElementById('progress-status').textContent = 'Uploading...';
+
+        // Animate progress bar
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = '30%';
+
+        // Upload via API
+        VectorlessRAG.uploadFile(file)
+            .then(data => {
+                progressBar.style.width = '100%';
+                document.getElementById('progress-status').textContent = 'Complete!';
+
+                lastUploadedDocId = data.data.id;
+
+                // Show result
+                setTimeout(() => {
+                    progress.style.display = 'none';
+                    result.style.display = 'block';
+                    document.getElementById('result-icon').textContent = '✅';
+                    document.getElementById('result-title').textContent = 'Upload Successful';
+                    document.getElementById('result-message').textContent = data.message;
+                    document.getElementById('result-meta').innerHTML = `
+                        <span class="meta-item">📄 ${data.data.filename}</span>
+                        <span class="meta-item">📃 ${data.data.page_count} pages</span>
+                        <span class="meta-item">💾 ${VectorlessRAG.formatFileSize(data.data.file_size)}</span>
+                    `;
+                }, 500);
+            })
+            .catch(err => {
+                progressBar.style.width = '100%';
+                progressBar.classList.add('progress-error');
+                document.getElementById('progress-status').textContent = 'Failed';
+
+                setTimeout(() => {
+                    progress.style.display = 'none';
+                    result.style.display = 'block';
+                    document.getElementById('result-icon').textContent = '❌';
+                    document.getElementById('result-title').textContent = 'Upload Failed';
+                    document.getElementById('result-message').textContent = err.message || 'An error occurred.';
+                    document.getElementById('result-actions').innerHTML = `
+                        <button class="btn btn-primary" onclick="location.reload()">Try Again</button>
+                    `;
+                }, 500);
+            });
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "41cc4fc9-add1-4939-8c89-156ba5ce0944",
+    "text": "This is a test document about game building and childhood games in 2026. Vectorless RAG vs Traditional RAG comparison test.",
+    "document_id": "50b3e1f6-aaf2-491f-b94a-5528c8e45077",
+    "page_number": 1,
+    "start_pos": 0,
+    "end_pos": 123,
+    "chunk_index": 0,
+    "metadata": {
+      "char_count": 123,
+      "word_count": 20
+    }
+  }
+]

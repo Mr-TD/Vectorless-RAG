@@ -1,0 +1,21 @@
+{
+  "id": "187caae5-13da-4a02-8d09-a5d7bf9fb0e5",
+  "title": "sample_game_doc.txt",
+  "summary": "Document 'sample_game_doc.txt' with 1 pages.",
+  "page_start": 1,
+  "page_end": 1,
+  "depth": 0,
+  "children": [
+    {
+      "id": "7297bed0-bd8d-4103-a90d-7a2e7921034b",
+      "title": "Page 1",
+      "summary": "Content from page 1 of the document.",
+      "page_start": 1,
+      "page_end": 1,
+      "depth": 1,
+      "children": [],
+      "content": "This is a test document about game building and childhood games in 2026. Vectorless RAG vs Traditional RAG comparison test."
+    }
+  ],
+  "content": ""
+}

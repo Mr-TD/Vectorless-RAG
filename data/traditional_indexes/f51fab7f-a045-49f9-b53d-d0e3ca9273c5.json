@@ -1,0 +1,1939 @@
+[
+  {
+    "id": "1565bd5f-abd2-4e5b-9268-5882b3fc78f4",
+    "text": "Executive Summary\nThis  comprehensive  plan  lays  out  a  week-by-week,  two-week-per-topic  learning  roadmap  for  a\nGenerative AI (GenAI) developer from Week 15 through Week 52 of 2026. It prioritises advanced GenAI\ntopics that build on your current skills (Python, LLM usage, Azure basics, NLP) and conceptual knowledge of\nMCP (Model Context Protocol) and Agentic AI. Early topics convert that conceptual knowledge into hands-on\nexperience (e.g. building LLM-powered agents), while later topics",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 1,
+    "start_pos": 0,
+    "end_pos": 500,
+    "chunk_index": 0,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "24a10bcd-e0d6-4e03-b8fd-359963c3a09e",
+    "text": "onceptual knowledge into hands-on\nexperience (e.g. building LLM-powered agents), while later topics deepen and broaden your expertise (e.g.\nfine-tuning,  RAG,  multimodal  AI,  deployment,  ethics).  Each  two-week  slot  includes  clear  objectives,\nprerequisites, activities, deliverables, assessment criteria, time estimates, and authoritative resources with\nlinks. We provide a Gantt-style timeline of all topics, a comparative table of difficulty/impact, and biweekly\nreview checkpoints.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 1,
+    "start_pos": 400,
+    "end_pos": 893,
+    "chunk_index": 1,
+    "metadata": {
+      "char_count": 492,
+      "word_count": 59
+    }
+  },
+  {
+    "id": "23312800-8b21-453e-a57b-abf896ca2d0a",
+    "text": "ne of all topics, a comparative table of difficulty/impact, and biweekly\nreview checkpoints. Finally, we offer a 3-month intensive sprint plan (with detailed weekly/daily tasks) and a\nlightweight alternative for learners with limited time. This plan uses official documentation (e.g. Microsoft,\nAnthropic), research papers (e.g. GPT-4, RAG, Chain-of-Thought), and reputable blogs. It is written in en-IN\n(Indian English) style and aims to be analytical and exhaustive. \ngantt\n    title Generative AI",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 1,
+    "start_pos": 800,
+    "end_pos": 1300,
+    "chunk_index": 2,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "bb33d079-859d-4002-9711-b00e6d2850fa",
+    "text": "-IN\n(Indian English) style and aims to be analytical and exhaustive. \ngantt\n    title Generative AI Developer 2026 Learning Plan\n    dateFormat  YYYY-MM-DD\n    %% Start Monday of week 15 (2026-04-12) as 2026-04-12\n    section Topics\n    Agentic AI & Tools (MCP Integration)        :a1, 2026-04-12, 14d\n    Prompt Engineering & CoT                    :a2, after a1, 14d\n    LLM Fine-Tuning & Adaptation                :a3, after a2, 14d\n    Retrieval-Augmented Generation (RAG)        :a4, after a3,",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 1,
+    "start_pos": 1200,
+    "end_pos": 1699,
+    "chunk_index": 3,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 63
+    }
+  },
+  {
+    "id": "010d87cf-d165-4711-b288-c2389344522d",
+    "text": "n                :a3, after a2, 14d\n    Retrieval-Augmented Generation (RAG)        :a4, after a3, 14d\n    Conversational Agents (Chatbots)            :a5, after a4, 14d\n    Multimodal AI (Vision+Language)             :a6, after a5, 14d\n    Azure OpenAI & AI Services                 :a7, after a6, 14d\n    Deployment & MLOps (Docker, CI/CD)         :a8, after a7, 14d\n    Evaluation & Metrics for GenAI             :a9, after a8, 14d\n    Advanced Agentic AI (MCP Code Execution)    :a10, after a9,",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 1,
+    "start_pos": 1600,
+    "end_pos": 2099,
+    "chunk_index": 4,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 62
+    }
+  },
+  {
+    "id": "901b3854-d068-49da-9541-8d50e0ba7227",
+    "text": "nAI             :a9, after a8, 14d\n    Advanced Agentic AI (MCP Code Execution)    :a10, after a9, 14d\n    Responsible AI & Ethics                    :a11, after a10, 14d\n    LLM for Code Generation                    :a12, after a11, 14d\n    Model Optimization (LoRA, Quantization)    :a13, after a12, 14d\n    Domain-Specific GenAI                      :a14, after a13, 14d\n    Data Engineering & Synthetic Data          :a15, after a14, 14d\n    LangChain & LLM Frameworks                 :a16,",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 1,
+    "start_pos": 2000,
+    "end_pos": 2496,
+    "chunk_index": 5,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 59
+    }
+  },
+  {
+    "id": "ff370abf-7847-4d11-b37c-9fadd10e9df7",
+    "text": "nthetic Data          :a15, after a14, 14d\n    LangChain & LLM Frameworks                 :a16, after a15, 14d\n    Cutting-edge Research & Trends             :a17, after a16, 14d\n    Capstone Project / Portfolio               :a18, after a17, 14d\n1",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 1,
+    "start_pos": 2400,
+    "end_pos": 2648,
+    "chunk_index": 6,
+    "metadata": {
+      "char_count": 248,
+      "word_count": 31
+    }
+  },
+  {
+    "id": "0376a5c6-34d5-4ae2-9898-ccbf9b2d26cb",
+    "text": "Detailed Two-Week Topic Plans\nAgentic AI & Tools (MCP Integration) – Weeks 15-16\nLearning Objectives:  Understand and apply Agentic AI concepts by building LLM-powered agents that use\nexternal tools/APIs. Learn the Model Context Protocol (MCP) standard for connecting LLMs to data and tools\n.\nPrerequisites:  Python programming, basic familiarity with calling LLM APIs, REST APIs, JSON. Conceptual\nunderstanding of Agentic AI and tools (from prior knowledge). \nWeek 1 Activities:\nStudy MCP & Function",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 2,
+    "start_pos": 0,
+    "end_pos": 501,
+    "chunk_index": 7,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "39507fab-fac2-445b-8ab1-2cfeacf7cc75",
+    "text": "derstanding of Agentic AI and tools (from prior knowledge). \nWeek 1 Activities:\nStudy MCP & Function Calling:  Read Anthropic’s MCP announcement  and Google’s Apigee blog\non MCP . Understand how MCP standardises tool integration. \nHands-on Tutorial:  Follow an OpenAI function-calling tutorial (e.g. datacamp or official docs) to call\na simple API (weather , calculator) from GPT-4 . Experiment with writing JSON tool descriptions for\nfunction calling. \nMini-Project:  Build a simple Python agent",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 2,
+    "start_pos": 400,
+    "end_pos": 897,
+    "chunk_index": 8,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "eefb5c97-07db-4e39-b68d-5358e65d2325",
+    "text": "writing JSON tool descriptions for\nfunction calling. \nMini-Project:  Build a simple Python agent using LangChain or the OpenAI Python SDK that takes\nuser  input  and  calls  a  public  API  (e.g.  Wikipedia  search  or  calculator)  via  function-calling.  For\nexample, query the agent for facts and have it search a knowledge API. \nWeek 2 Activities:\nMCP Server Practice:  Use Anthropic’s MCP SDK (or mock it) to create a local MCP server with at least\n2 tools (e.g. one to read local files, one to",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 2,
+    "start_pos": 800,
+    "end_pos": 1300,
+    "chunk_index": 9,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 82
+    }
+  },
+  {
+    "id": "1a7e51fb-9bd8-4fa8-82f5-913b16825bd7",
+    "text": "r mock it) to create a local MCP server with at least\n2 tools (e.g. one to read local files, one to call a web search). Implement an MCP client in Python to\nconnect to it. \nIntegrate LLM & Tools:  Combine the tools into an agent: e.g. ask your agent a question that\nrequires reading a document or searching the web. Verify the agent uses the MCP tools rather than\nstatic knowledge. \nIteration & Reflection:  Optimize prompts so the agent reliably calls tools (experiment with chain-of-\nthought or",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 2,
+    "start_pos": 1200,
+    "end_pos": 1697,
+    "chunk_index": 10,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 88
+    }
+  },
+  {
+    "id": "04dc02b6-a416-4eef-9f45-4d381add375e",
+    "text": "ction:  Optimize prompts so the agent reliably calls tools (experiment with chain-of-\nthought or direct instructions). \nDeliverables:  A working Python agent (script or notebook) that uses an LLM (GPT-4/Claude) together with\nat least one external tool (via function-call or MCP). Submit the code and a short report on how tools were\nintegrated.\nAssessment Criteria:  Agent correctly calls tools based on input prompts; integration is modular (e.g. tools\nseparate from prompt). Evaluate by demoing at",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 2,
+    "start_pos": 1600,
+    "end_pos": 2100,
+    "chunk_index": 11,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "93d03146-8654-480b-8fd1-b6d05997b86c",
+    "text": "on input prompts; integration is modular (e.g. tools\nseparate from prompt). Evaluate by demoing at least 2 use cases. Check understanding by explaining how\nMCP simplifies adding new tools . \nTime Commitment:  ~30–40 hours (15-20h/week).\nRecommended Resources:  Official OpenAI Function Calling docs; Anthropic MCP overview ; Google\nApigee blog on MCP ; LangChain Agents Guide (official docs) .\nTools:  OpenAI or Anthropic API (Claude) via SDK, Python (requests), LangChain or AutoGPT framework, MCP",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 2,
+    "start_pos": 2000,
+    "end_pos": 2500,
+    "chunk_index": 12,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "a3ec07fc-6ef7-459d-a507-de660b7bdd8a",
+    "text": ":  OpenAI or Anthropic API (Claude) via SDK, Python (requests), LangChain or AutoGPT framework, MCP\nSDK or Flask for server , Postman (optional). 12\n• \n• 1\n3\n• \n2\n• \n• \n• \n• \n• \n1\n1\n3 45\n2",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 2,
+    "start_pos": 2400,
+    "end_pos": 2588,
+    "chunk_index": 13,
+    "metadata": {
+      "char_count": 188,
+      "word_count": 40
+    }
+  },
+  {
+    "id": "01f1d570-fd1d-4e01-af8c-60f09f3a04a1",
+    "text": "Checkpoint:  End of Week 16 – Verify agent uses tools (not hardcoded answers). If agent fails on edge cases\n(e.g. ambiguous queries), refine prompts or add more tool definitions. Confirm ability to add a new tool to\nthe MCP server with minimal changes.\nAdvanced Prompt Engineering & Chain-of-Thought (CoT) – Weeks 17-18\nLearning Objectives:  Master advanced prompting techniques, including few-shot, chain-of-thought and\nmulti-turn  prompts,  to  improve  LLM  reasoning .  Learn  to  structure",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 3,
+    "start_pos": 0,
+    "end_pos": 496,
+    "chunk_index": 14,
+    "metadata": {
+      "char_count": 494,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "06d8c3e8-bf05-416a-a82c-0ad4e91a2524",
+    "text": "chain-of-thought and\nmulti-turn  prompts,  to  improve  LLM  reasoning .  Learn  to  structure  prompts  for  complex  tasks\n(summarization, logic puzzles, arithmetic).\nPrerequisites:  Comfortable with Python and using chat/completion APIs; basic prompt-writing skills. \nWeek 1 Activities:\nStudy CoT Concept:  Read the Chain-of-Thought paper  (Wei et al. 2022) to understand how\nshowing intermediate reasoning steps can boost LLM performance. Watch tutorials or blog\nsummaries on CoT prompting.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 3,
+    "start_pos": 400,
+    "end_pos": 896,
+    "chunk_index": 15,
+    "metadata": {
+      "char_count": 494,
+      "word_count": 64
+    }
+  },
+  {
+    "id": "bf283fd2-68c0-4bbb-b474-123d9db96e3b",
+    "text": "reasoning steps can boost LLM performance. Watch tutorials or blog\nsummaries on CoT prompting. \nPrompt Strategy Practice:  Take a few sample tasks (math word problems, common-sense QA) and\ndesign few-shot examples with and without CoT explanations. Use GPT-4 or Claude to test\nperformance. Compare accuracy improvements qualitatively (CoT vs direct answer). \nExperiment:  Try  self-consistency  (multiple  CoT  examples)  and  ensemble  prompting  methods.\nDocument which strategies help most on",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 3,
+    "start_pos": 800,
+    "end_pos": 1296,
+    "chunk_index": 16,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "a75eb697-cfe9-4549-b89f-ca161d29cb64",
+    "text": "iple  CoT  examples)  and  ensemble  prompting  methods.\nDocument which strategies help most on which tasks. \nWeek 2 Activities:\nComplex Prompting:  Tackle a complex NLP task (e.g. document summarization, reading\ncomprehension). Craft prompts that guide the model through multiple steps (e.g. first extract facts,\nthen summarize). \nPrompt Templates & Tools:  Learn about prompt templates (LangChain, PromptLib). Implement a\nsimple prompt template in code (Python/Prometheus) to inject dynamic content.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 3,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 17,
+    "metadata": {
+      "char_count": 501,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "91922328-725e-471f-af14-1e1166df4398",
+    "text": "PromptLib). Implement a\nsimple prompt template in code (Python/Prometheus) to inject dynamic content. \nRefinement & Benchmarks:  Evaluate your prompts on a validation set or known answers. Iterate\nprompts to reduce hallucination and improve relevance. \nDeliverables:  A set of 3–5 prompt templates (code + descriptions) demonstrating advanced techniques\n(few-shot, CoT) and results on sample tasks (e.g. before/after accuracy or output examples). A brief write-up\ncomparing performance.\nAssessment",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 3,
+    "start_pos": 1600,
+    "end_pos": 2098,
+    "chunk_index": 18,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 66
+    }
+  },
+  {
+    "id": "cc9fffbf-0f15-491e-8970-e7a2003f5a25",
+    "text": ".g. before/after accuracy or output examples). A brief write-up\ncomparing performance.\nAssessment Criteria:  Ability to significantly improve task accuracy or output quality using CoT techniques\n. Clear documentation of prompt designs. Peer review or self-critique on prompt clarity and reliability. \nTime Commitment:  ~20–30 hours.\nRecommended  Resources:  Chain-of-Thought  paper ;  OpenAI  Cookbook  examples  on  prompting;\nOpenAI docs or blogs on prompt best practices; LangChain PromptGuide.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 3,
+    "start_pos": 2000,
+    "end_pos": 2498,
+    "chunk_index": 19,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 64
+    }
+  },
+  {
+    "id": "e7a78fc0-5ec6-47a5-9f74-b1451d506efb",
+    "text": "k  examples  on  prompting;\nOpenAI docs or blogs on prompt best practices; LangChain PromptGuide.\nTools:  GPT-4/Claude via API, Python, Jupyter/Colab, LangChain. \nCheckpoint:  End  of  Week  18  –  Verify  prompts  improve  performance  (compare  baseline  vs  advanced\nprompting).  If  not,  try  different  CoT  examples  or  adjust  prompt  phrasing.  Confirm  understanding  by\nexplaining why CoT helps in your cases.6\n• \n• 6\n• \n• \n• \n• \n• \n• \n6\n6\n3",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 3,
+    "start_pos": 2400,
+    "end_pos": 2853,
+    "chunk_index": 20,
+    "metadata": {
+      "char_count": 453,
+      "word_count": 68
+    }
+  },
+  {
+    "id": "b40468cf-7b36-4426-999d-2abf257df63f",
+    "text": "LLM Fine-Tuning & Adaptation – Weeks 19-20\nLearning  Objectives:  Learn  how  to  fine-tune  a  pretrained  LLM  on  domain-specific  data  (SFT/DPO),\nincluding techniques like Low-Rank Adaptation (LoRA) to efficiently adapt models . Compare fine-tuning\nvs in-context learning trade-offs.\nPrerequisites:  Familiarity with machine learning training concepts, basics of PyTorch/Transformers, having\npracticed using an LLM API. \nWeek 1 Activities:\nConcepts & Techniques:  Read Microsoft’s guide on",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 4,
+    "start_pos": 0,
+    "end_pos": 495,
+    "chunk_index": 21,
+    "metadata": {
+      "char_count": 494,
+      "word_count": 63
+    }
+  },
+  {
+    "id": "830c43a0-2a8b-4461-b979-3bdc08c7f4af",
+    "text": "cticed using an LLM API. \nWeek 1 Activities:\nConcepts & Techniques:  Read Microsoft’s guide on fine-tuning (Azure Foundry) . Note\nbenefits: higher quality outputs than prompt-only, token and latency savings. Understand LoRA\nbasics (train a small subset of weights). \nDataset Prep:  Select or create a small dataset (e.g. customer support Q&A, medical Q&A, or code\nexamples) in JSONL format as required. Follow Azure’s sample JSONL format  for chat fine-tuning. \nInitial Experiment:  Use Hugging Face",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 4,
+    "start_pos": 400,
+    "end_pos": 900,
+    "chunk_index": 22,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "00212045-6a6c-47ff-a1ac-43065b80b105",
+    "text": "d. Follow Azure’s sample JSONL format  for chat fine-tuning. \nInitial Experiment:  Use Hugging Face Transformers Trainer  (or Azure CLI/Foundry if accessible)\nto fine-tune a smaller model (e.g. Llama-2-7B or GPT-Neo) on your dataset. Monitor training, verify\nno major errors. \nWeek 2 Activities:\nLoRA & Efficiency:  Implement LoRA-based fine-tuning on the same data (HF PEFT library). Compare\ntraining time and resource usage vs full fine-tune. \nEvaluate Fine-Tuned Model:  Use held-out examples to",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 4,
+    "start_pos": 800,
+    "end_pos": 1299,
+    "chunk_index": 23,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "dfc5d984-e56f-446c-ae4e-1bc268f6d89f",
+    "text": "g time and resource usage vs full fine-tune. \nEvaluate Fine-Tuned Model:  Use held-out examples to compare responses of base vs fine-tuned\nmodel. Check for improved relevance or correctness. \nAutoML Tools (optional):  Explore any Azure ML automated tools for dataset creation or labeling to\naugment your data. \nDeliverables:  A  fine-tuned  (and  optionally  LoRA-adapted)  LLM  on  your  dataset.  Submit  training\nconfiguration/code and sample outputs before/after . Include evaluation (e.g. simple",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 4,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 24,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 68
+    }
+  },
+  {
+    "id": "d3d69998-45f7-4f1c-9e5b-1bfb4580a1d0",
+    "text": "ubmit  training\nconfiguration/code and sample outputs before/after . Include evaluation (e.g. simple accuracy or human\nreview notes).\nAssessment Criteria:  Fine-tuned model should show measurable improvement (e.g. higher task accuracy\nor BLEU/ROUGE on test set). Document how LoRA reduced compute/cost . Ensure understanding of\nwhen to use fine-tuning over prompting. \nTime Commitment:  ~30–40 hours.\nRecommended Resources:  Microsoft Fine-Tuning guide ; Hugging Face Transformers Fine-tuning docs\n;",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 4,
+    "start_pos": 1600,
+    "end_pos": 2100,
+    "chunk_index": 25,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 65
+    }
+  },
+  {
+    "id": "656b214e-93e4-4f22-ab5c-4b2f473045d7",
+    "text": "Recommended Resources:  Microsoft Fine-Tuning guide ; Hugging Face Transformers Fine-tuning docs\n; LoRA/PEFT tutorials (HF docs).\nTools:  Hugging Face Transformers and Datasets, Azure OpenAI or Azure ML (Foundry) if available, Python,\nGPU instance (Colab/GPU). \nCheckpoint:  End of Week 20 – Confirm fine-tuned model produces higher-quality outputs on test prompts\n. If not, refine dataset (add examples) or training hyperparameters. Check that LoRA model does not\ndegrade performance significantly",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 4,
+    "start_pos": 2000,
+    "end_pos": 2500,
+    "chunk_index": 26,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 68
+    }
+  },
+  {
+    "id": "aa0158f7-b2a0-4ca1-9a99-e7948d316e93",
+    "text": "ples) or training hyperparameters. Check that LoRA model does not\ndegrade performance significantly while reducing cost .7\n• \n• 87\n• \n9\n• \n• \n• \n• \n• \n7\n8\n10\n8\n7\n4",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 4,
+    "start_pos": 2400,
+    "end_pos": 2563,
+    "chunk_index": 27,
+    "metadata": {
+      "char_count": 163,
+      "word_count": 33
+    }
+  },
+  {
+    "id": "5c91352d-ffbd-4a43-9e02-27bd567e433d",
+    "text": "Retrieval-Augmented Generation (RAG) – Weeks 21-22\nLearning Objectives:  Implement RAG pipelines that combine LLMs with an external knowledge base via\nembeddings. Learn how dense retrieval (vector search) can improve factuality .\nPrerequisites:  Knowledge of embeddings, familiarity with vector stores (basic idea), comfort with LLM APIs.\nWeek 1 Activities:\nLearn RAG Concept:  Read the RAG paper  (Lewis et al. 2021) to understand how LLMs integrate\nparametric (model) and non-parametric (retrieval)",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 5,
+    "start_pos": 0,
+    "end_pos": 501,
+    "chunk_index": 28,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 69
+    }
+  },
+  {
+    "id": "ab485a1e-a12e-49ac-bab0-9ebced643d4c",
+    "text": "ewis et al. 2021) to understand how LLMs integrate\nparametric (model) and non-parametric (retrieval) memory. Focus on the idea of fine-tuning a\nseq2seq model with a retriever . \nImplement Basic RAG:  Use Hugging Face’s RagTokenizer /RagRetriever  pipeline or\nLangChain LLM+retriever combo. For example, index a corpus of text (Wikipedia snippets or your\nown articles) with FAISS or Milvus, then query via GPT. \nTest Q&A:  Evaluate the RAG system on open-domain questions. Compare answers from RAG vs",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 5,
+    "start_pos": 400,
+    "end_pos": 900,
+    "chunk_index": 29,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 76
+    }
+  },
+  {
+    "id": "e299c802-3901-4087-ab45-3654ac44b1b9",
+    "text": "via GPT. \nTest Q&A:  Evaluate the RAG system on open-domain questions. Compare answers from RAG vs a\nvanilla LLM. \nWeek 2 Activities:\nAzure Cognitive Search + LLM:  Set up an Azure Cognitive Search vector index (using Azure AI\nSearch) . Ingest documents (Azure’s Quickstart guides). Use Azure OpenAI to query this index\n(using integrated vector queries as described). \nHybrid Search Experiments:  Try hybrid queries (keyword + vector) for more robust results . Build\na simple chatbot interface that",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 5,
+    "start_pos": 800,
+    "end_pos": 1300,
+    "chunk_index": 30,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 78
+    }
+  },
+  {
+    "id": "28954657-c526-4c5c-a44d-16df780ffea5",
+    "text": "y hybrid queries (keyword + vector) for more robust results . Build\na simple chatbot interface that retrieves docs and then asks the LLM to generate an answer based\non retrieved context. \nIterate on Retrieval:  Tune the embedding model or index parameters (e.g. k-nearest neighbors\ncount) for best precision. \nDeliverables:  A RAG-based QA system. Provide code/notebook for indexing documents and querying, plus\nexample  Q&A  interactions  showing  retrieved  context.  Include  a  brief  report  of",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 5,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 31,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "1719ce58-ba6b-4154-9aa2-174cd7524f87",
+    "text": "rying, plus\nexample  Q&A  interactions  showing  retrieved  context.  Include  a  brief  report  of  performance  (e.g.\nprecision@k or user satisfaction).\nAssessment Criteria:  RAG should demonstrably provide more factual, detailed answers than a base LLM\nalone. Cite the RAG paper to explain your approach . Ensure retrieval hits relevant passages for queries. \nTime Commitment:  ~30 hours.\nRecommended  Resources:  RAG  research  paper ;  Hugging  Face  RAG  tutorial;  Azure  Vector  Search",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 5,
+    "start_pos": 1600,
+    "end_pos": 2094,
+    "chunk_index": 32,
+    "metadata": {
+      "char_count": 493,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "3b9db7cb-5568-4a89-bbc0-e8ea48019483",
+    "text": "ded  Resources:  RAG  research  paper ;  Hugging  Face  RAG  tutorial;  Azure  Vector  Search\noverview ; Microsoft AI Search docs on embeddings and hybrid search .\nTools:  Hugging Face Transformers, FAISS or Pinecone, Azure AI Search or Elasticsearch with vector plugin,\nPython, LangChain (optional). \nCheckpoint:  End of Week 22 – Check that at least 70–80% of queries retrieve relevant doc excerpts. If not,\nrefine document corpus or adjust embeddings (e.g. use OpenAI embeddings). Confirm RAG",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 5,
+    "start_pos": 2000,
+    "end_pos": 2496,
+    "chunk_index": 33,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "54894a8a-6787-4f86-8f6a-7ada34e0de6d",
+    "text": ". If not,\nrefine document corpus or adjust embeddings (e.g. use OpenAI embeddings). Confirm RAG answers are\nmore accurate/factual than LLM alone.1112\n• \n• 11\n• \n• \n• \n• \n12\n• 13\n• \n11\n11\n12 13\n5",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 5,
+    "start_pos": 2400,
+    "end_pos": 2594,
+    "chunk_index": 34,
+    "metadata": {
+      "char_count": 194,
+      "word_count": 38
+    }
+  },
+  {
+    "id": "a989e3b6-6d97-43b3-be94-a5321007da0d",
+    "text": "Conversational Agents & Chatbots – Weeks 23-24\nLearning Objectives:  Build interactive chatbots using LLMs. Learn dialogue management fundamentals\nand how to integrate LLMs into conversational flows (slot-filling, context memory).\nPrerequisites:  Basic NLP knowledge, LLM usage, and experience from previous CoT and RAG topics. \nWeek 1 Activities:\nStudy Conversational AI:  Review chatbot architectures (Retrieval vs Generative). Read Microsoft’s\nguide or blog on building chatbots with Azure OpenAI .",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 6,
+    "start_pos": 0,
+    "end_pos": 501,
+    "chunk_index": 35,
+    "metadata": {
+      "char_count": 501,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "6b069e9b-6562-4486-bf95-7050ebe9d61e",
+    "text": "es (Retrieval vs Generative). Read Microsoft’s\nguide or blog on building chatbots with Azure OpenAI . Explore Rasa or Bot Framework basics. \nPrototype Bot:  Create a simple rule-based or retrieval-based chatbot (no LLM) on a toy topic (e.g.\nFAQ). Familiarise with Azure Bot Service or Rasa for conversation flows. \nIntegrate LLM:  Modify the bot to call an LLM for generating responses. For example, use OpenAI\nAPI as the backend of a Rasa action or Bot Framework “skill”. \nWeek 2 Activities:",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 6,
+    "start_pos": 400,
+    "end_pos": 893,
+    "chunk_index": 36,
+    "metadata": {
+      "char_count": 492,
+      "word_count": 80
+    }
+  },
+  {
+    "id": "af796bed-2a87-472d-a797-d57187b9ebf0",
+    "text": "use OpenAI\nAPI as the backend of a Rasa action or Bot Framework “skill”. \nWeek 2 Activities:\nMulti-turn Context:  Implement conversation history tracking. Ensure the bot passes previous\nmessages or summaries to the LLM so it maintains context over turns. \nPersona and Constraints:  Experiment with system prompts or LLM roles to give the bot a\nconsistent persona or tone. (E.g. “You are a helpful travel assistant.”) \nUser Inputs & Data Sanitization:  Build logic for handling unclear questions",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 6,
+    "start_pos": 800,
+    "end_pos": 1295,
+    "chunk_index": 37,
+    "metadata": {
+      "char_count": 494,
+      "word_count": 77
+    }
+  },
+  {
+    "id": "ae476f65-519c-48a1-9a42-9fb22af4b2f4",
+    "text": "vel assistant.”) \nUser Inputs & Data Sanitization:  Build logic for handling unclear questions (re-prompt user) and\nensure safe handling of inputs (filter PII). \nDeliverables:  A demo conversational agent (web interface or chat log). Must support a coherent multi-turn\ndialogue on a specific domain (e.g. tech support or tutoring). Provide instructions to run it and example\ninteractions.\nAssessment Criteria:  Evaluate on coherence, relevancy, and context retention across turns. Use a small\nuser",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 6,
+    "start_pos": 1200,
+    "end_pos": 1698,
+    "chunk_index": 38,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "119954c2-2bfc-4744-b5a9-819bffaa950b",
+    "text": "Criteria:  Evaluate on coherence, relevancy, and context retention across turns. Use a small\nuser study or self-test (5–10 conversations) to score the bot’s helpfulness. Document any challenges (like\nhallucinations or repetitive answers) and how you mitigated them. \nTime Commitment:  ~20–30 hours.\nRecommended  Resources:  Azure  Bot  Service  with  OpenAI  example ;  Rasa  documentation  on\nintegrating LLMs; Microsoft QnA Maker (for quick retrieval-based baseline).\nTools:  Azure Bot Service or",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 6,
+    "start_pos": 1600,
+    "end_pos": 2099,
+    "chunk_index": 39,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "de19123a-1cd9-484a-b9bd-f549ac1ddea0",
+    "text": "ating LLMs; Microsoft QnA Maker (for quick retrieval-based baseline).\nTools:  Azure Bot Service or Rasa, Azure OpenAI/GPT API, Python/JavaScript, possibly low-code tools (Power\nVirtual Agents). \nCheckpoint:  End of Week 24 – Verify the bot correctly maintains context (e.g. refers back to earlier user\ndetails).  If  it  fails,  adjust  how  history  is  passed  (e.g.  summary  vs  full  log).  Ensure  polite  and  helpful\nresponses.\nMultimodal AI (Vision + Language) – Weeks 25-26\nLearning",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 6,
+    "start_pos": 2000,
+    "end_pos": 2493,
+    "chunk_index": 40,
+    "metadata": {
+      "char_count": 492,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "b299be69-2088-4046-8e78-990dadee591a",
+    "text": "re  polite  and  helpful\nresponses.\nMultimodal AI (Vision + Language) – Weeks 25-26\nLearning Objectives:  Explore multimodal generative models. Learn how language models can process\nimages (e.g. GPT-4 Vision) and how vision-language models like CLIP work. Build an application combining• \n• \n14\n• \n• \n• \n• \n• \n• \n15\n6",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 6,
+    "start_pos": 2400,
+    "end_pos": 2717,
+    "chunk_index": 41,
+    "metadata": {
+      "char_count": 317,
+      "word_count": 50
+    }
+  },
+  {
+    "id": "02689b1d-fdb9-49b3-8df6-2f80fedb5d26",
+    "text": "vision and text.\nPrerequisites:  Familiarity with LLMs; basic image processing. \nWeek 1 Activities:\nStudy Multimodal Models:  Read OpenAI’s GPT-4 Technical Report  focusing on vision\ncapabilities (GPT-4V). Explore CLIP (Contrastive Language-Image Pretraining) idea and DALL·E/Stable\nDiffusion basics. \nHands-on CLIP:  Use a pretrained CLIP model (via Hugging Face Transformers or OpenAI API) to\nencode images and text, and perform similarity tasks (e.g. rank which caption best matches an\nimage).",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 7,
+    "start_pos": 0,
+    "end_pos": 498,
+    "chunk_index": 42,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "e878b86c-38c7-44fa-b1dd-c5f72a06acda",
+    "text": "e images and text, and perform similarity tasks (e.g. rank which caption best matches an\nimage). \nSimple Vision-Language Task:  Choose an existing image dataset (e.g. COCO or your photos). Write\na script that takes an image and generates a caption using a multimodal LLM (if available) or an\nimage-to-text pipeline. \nWeek 2 Activities:\nVision+Chatbot App:  Build a small app where a user can upload an image and chat about it. Use\nGPT-4V (if accessible) or combine CLIP embeddings + GPT: e.g.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 7,
+    "start_pos": 400,
+    "end_pos": 893,
+    "chunk_index": 43,
+    "metadata": {
+      "char_count": 492,
+      "word_count": 81
+    }
+  },
+  {
+    "id": "f857dd4b-41a8-4e69-adca-1313ccd2c183",
+    "text": "n image and chat about it. Use\nGPT-4V (if accessible) or combine CLIP embeddings + GPT: e.g. retrieve similar image captions from\ndataset and feed them to GPT for Q&A. \nImage Generation (optional):  Experiment with stable diffusion or DALL·E: e.g. write a program that\ngenerates images from textual descriptions. Evaluate creativity vs accuracy. \nAnalysis:  Compare outputs from different multimodal approaches. Note limitations (e.g. GPU needs,\nquality). \nDeliverables:  A multimodal demo (e.g. web",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 7,
+    "start_pos": 800,
+    "end_pos": 1300,
+    "chunk_index": 44,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "6c3b1e80-73f4-4b19-a992-1e13b1e817d8",
+    "text": "approaches. Note limitations (e.g. GPU needs,\nquality). \nDeliverables:  A multimodal demo (e.g. web app or script) showing image + text processing. For example,\nan image-caption bot or an image-to-text Q&A assistant. Include sample images and interactions.\nAssessment Criteria:  Demonstrate that the model correctly understands simple image content (e.g. “What\nobjects are in this image?” answered accurately). If generating images, ensure they match prompts. Discuss\nany failure modes. Cite GPT-4’s",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 7,
+    "start_pos": 1200,
+    "end_pos": 1700,
+    "chunk_index": 45,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 69
+    }
+  },
+  {
+    "id": "17a74cc6-2912-4d09-a542-b7de8aab1e1c",
+    "text": "curately). If generating images, ensure they match prompts. Discuss\nany failure modes. Cite GPT-4’s multimodal capability  as context. \nTime Commitment:  ~20 hours.\nRecommended Resources:  GPT-4 Technical Report ; OpenAI GPT-4V documentation; Hugging Face CLIP\ntutorial; Stable Diffusion online resources (Hugging Face Spaces).\nTools:  OpenAI API (GPT-4V or API functions), Hugging Face Transformers (CLIP), Stable Diffusion (Diffusers),\nPython, Streamlit/Gradio for UI. \nCheckpoint:  End of Week 26",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 7,
+    "start_pos": 1600,
+    "end_pos": 2100,
+    "chunk_index": 46,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 65
+    }
+  },
+  {
+    "id": "2c7b1bd1-a604-41ff-ae5f-60e663b3caf2",
+    "text": "(CLIP), Stable Diffusion (Diffusers),\nPython, Streamlit/Gradio for UI. \nCheckpoint:  End of Week 26 – Check that the application correctly handles both text and image inputs. If\nmisclassification  occurs,  consider  adding  more  prompts  or  using  better  pre-processing  (e.g.  resizing,\ncropping). Confirm app stability with several test images.\nAzure GenAI Services & Cloud Integration – Weeks 27-28\nLearning Objectives:  Master Azure’s Generative AI offerings. Learn to deploy LLM applications",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 7,
+    "start_pos": 2000,
+    "end_pos": 2500,
+    "chunk_index": 47,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "85aa5553-192c-47f8-a946-d9417ea09142",
+    "text": "7-28\nLearning Objectives:  Master Azure’s Generative AI offerings. Learn to deploy LLM applications using Azure\nOpenAI Service, Azure Cognitive Search, and other AI services (e.g. Azure AI Studio). Integrate cloud APIs• \n• 1617\n• \n• \n• \n• \n• \n• \n16\n16\n7",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 7,
+    "start_pos": 2400,
+    "end_pos": 2653,
+    "chunk_index": 48,
+    "metadata": {
+      "char_count": 253,
+      "word_count": 42
+    }
+  },
+  {
+    "id": "42d27a22-f8dc-4145-a581-a347d8323f70",
+    "text": "securely.\nPrerequisites:  Basic Azure knowledge (resource groups, roles), completion of previous LLM and RAG topics.\nWeek 1 Activities:\nAzure OpenAI Setup:  Follow Microsoft Learn tutorials to provision an Azure OpenAI resource (or\nFoundry) and create a simple “chat completion” through Azure CLI or portal. Review Microsoft’s\ngenerative AI docs . \nCognitive Services:  Explore Azure AI Search (indexing text with AI enrichment) and QnA Maker . Try\nuploading a document set to Azure Cognitive Search",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 8,
+    "start_pos": 0,
+    "end_pos": 500,
+    "chunk_index": 49,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "c1925771-3982-490d-8409-822d25be9e6b",
+    "text": "ing text with AI enrichment) and QnA Maker . Try\nuploading a document set to Azure Cognitive Search and querying it. \nSecurity & Roles:  Understand Azure roles required (e.g. AI Owner vs User ) and practice setting\npermissions. \nWeek 2 Activities:\nAzure-based Project:  Build a small Azure-hosted GenAI app. Example: an Azure Function or Web\nApp that takes user input, calls Azure OpenAI for answer , and optionally uses Cognitive Search for\nRAG. Deploy and test it. \nCost & Monitoring:  Set up Azure",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 8,
+    "start_pos": 400,
+    "end_pos": 901,
+    "chunk_index": 50,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 83
+    }
+  },
+  {
+    "id": "e8a8d333-a130-4012-8a01-a0c32fc88221",
+    "text": "and optionally uses Cognitive Search for\nRAG. Deploy and test it. \nCost & Monitoring:  Set up Azure Monitor or Logging to track usage/cost of your GenAI resource.\nPractice scaling (e.g. replica instances, region selection). \nTooling:  Try using Azure AI Studio (or Foundry UI) for pipeline building or data preparation. \nDeliverables:  A deployed Azure-hosted LLM application (demo URL or local host). Submit architecture\ndiagram and key configurations. Include any ARM templates or pipeline scripts",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 8,
+    "start_pos": 800,
+    "end_pos": 1301,
+    "chunk_index": 51,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "19118e31-ac3f-4ae1-90c7-4005734fc34d",
+    "text": "). Submit architecture\ndiagram and key configurations. Include any ARM templates or pipeline scripts used.\nAssessment Criteria:  The app should correctly call Azure GenAI services and handle errors gracefully (rate\nlimits,  auth  issues).  Evaluate  scalability  (could  it  handle  100  concurrent  requests?).  Demonstrate  cost-\nawareness (use lower-priced model if possible, or have alerts). \nTime Commitment:  ~20 hours.\nRecommended  Resources:  Azure  OpenAI  and  Cognitive  Services  docs  (e.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 8,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 52,
+    "metadata": {
+      "char_count": 501,
+      "word_count": 65
+    }
+  },
+  {
+    "id": "2bd75cd7-3cb0-4006-9c76-1b06e6f3b208",
+    "text": "e Commitment:  ~20 hours.\nRecommended  Resources:  Azure  OpenAI  and  Cognitive  Services  docs  (e.g.  Microsoft  Learn  “Develop\ngenerative AI with Azure”); Microsoft Foundry fine-tune guide ; Azure AI Search Quickstart .\nTools:  Azure Portal, Azure CLI, Azure AI Studio (Foundry), Visual Studio Code, Azure ML studio or Databricks\n(optional). \nCheckpoint:  End of Week 28 – Verify your app works on the Azure cloud (not just locally). Check that logs\nindicate successful API calls and no",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 8,
+    "start_pos": 1600,
+    "end_pos": 2092,
+    "chunk_index": 53,
+    "metadata": {
+      "char_count": 491,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "5c89b42c-f9f8-4f08-a31b-9c26f41a2c77",
+    "text": "on the Azure cloud (not just locally). Check that logs\nindicate successful API calls and no permission errors. If issues, revisit role assignments or network settings\n(NSG, firewalls).\nDeployment & MLOps for GenAI – Weeks 29-30\nLearning  Objectives:  Learn  best  practices  for  deploying  GenAI  applications  into  production.  Master\ncontainerization (Docker), CI/CD pipelines, and monitoring/traceability (MLflow, LangSmith, Azure ML).\nPrerequisites:  General DevOps knowledge (Git, Docker), and",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 8,
+    "start_pos": 2000,
+    "end_pos": 2501,
+    "chunk_index": 54,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 65
+    }
+  },
+  {
+    "id": "ba8ca979-fbd8-43df-9874-3461d1ded8ac",
+    "text": "ceability (MLflow, LangSmith, Azure ML).\nPrerequisites:  General DevOps knowledge (Git, Docker), and all previous LLM project experience. \nWeek 1 Activities:• \n• \n8\n• \n• 18\n• \n• \n• \n• \n8 12\n• \n8",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 8,
+    "start_pos": 2400,
+    "end_pos": 2594,
+    "chunk_index": 55,
+    "metadata": {
+      "char_count": 194,
+      "word_count": 33
+    }
+  },
+  {
+    "id": "8a262113-e050-4e66-88ab-ed81803f0179",
+    "text": "Containerization:  Dockerize one of your LLM applications (e.g. the chatbot or RAG app). Write a \nDockerfile  and build an image with the LLM API client. Test container locally. \nVersion Control:  Ensure code is on Git/GitHub. Practice branching and PR reviews for any code\nchanges. \nCI Pipeline:  Set up a simple CI pipeline (GitHub Actions or Azure Pipelines) that automatically builds\nand tests the Docker image on each commit. \nWeek 2 Activities:\nDeployment:  Deploy the container to a cloud",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 9,
+    "start_pos": 0,
+    "end_pos": 496,
+    "chunk_index": 56,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 78
+    }
+  },
+  {
+    "id": "d97b5277-e50a-4ce2-b8a4-68e94c5103d0",
+    "text": "e Docker image on each commit. \nWeek 2 Activities:\nDeployment:  Deploy the container to a cloud platform. For example, use Azure Container Instances\nor Azure Kubernetes Service (AKS) for scalability. Configure environment variables (API keys)\nsecurely. \nMonitoring & Logging:  Integrate a logging framework (e.g. Azure Application Insights or MLflow\ntracking) to record query inputs/outputs. Set up alerts for errors or high latency. \nModel Registry (optional):  Explore using MLflow or Hugging Face",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 9,
+    "start_pos": 400,
+    "end_pos": 900,
+    "chunk_index": 57,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "3c59cec2-fbb0-4c34-836d-ee079588e5b0",
+    "text": "lerts for errors or high latency. \nModel Registry (optional):  Explore using MLflow or Hugging Face Hub to version your fine-tuned\nmodels. \nDeliverables:  A fully deployed GenAI app (e.g. in AKS) with CI/CD pipeline. Provide a README on how to\nbuild/deploy from source. Include screenshots of CI runs, container image, and monitoring dashboard.\nAssessment Criteria:  The app should spin up in a few minutes via your pipeline. Validate that it recovers\nfrom crashes (e.g. restarts). Show logs of an",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 9,
+    "start_pos": 800,
+    "end_pos": 1298,
+    "chunk_index": 58,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 78
+    }
+  },
+  {
+    "id": "f7d93aaa-45dc-48a1-af82-a6379ecc8e53",
+    "text": "inutes via your pipeline. Validate that it recovers\nfrom crashes (e.g. restarts). Show logs of an LLM query in Application Insights. Include a rollback test (e.g.\nrevert a commit, pipeline does not deploy a bug). \nTime Commitment:  ~30 hours.\nRecommended Resources:  Azure DevOps / GitHub Actions docs; Docker official docs; Azure AKS tutorial;\nMLflow or LangSmith docs for model monitoring.\nTools:  Docker ,  Kubernetes/AKS  or  Azure  Container  Apps,  GitHub  Actions,  Azure  Monitor/Application",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 9,
+    "start_pos": 1200,
+    "end_pos": 1700,
+    "chunk_index": 59,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "32d3a0d5-a6c0-4575-9dd4-abc8756a645d",
+    "text": "Docker ,  Kubernetes/AKS  or  Azure  Container  Apps,  GitHub  Actions,  Azure  Monitor/Application\nInsights, MLflow. \nCheckpoint:  End  of  Week  30  –  Trigger  the  pipeline  with  a  sample  commit  and  ensure  successful\ndeployment. Confirm you can view a log entry in monitoring when making a query. If not working, check\npipeline logs and network settings.\nEvaluation & Metrics for Generative AI – Weeks 31-32\nLearning Objectives:  Learn how to evaluate generative models: metrics for",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 9,
+    "start_pos": 1600,
+    "end_pos": 2093,
+    "chunk_index": 60,
+    "metadata": {
+      "char_count": 492,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "5c386cec-9df1-484a-93ec-4f75804ad63f",
+    "text": "AI – Weeks 31-32\nLearning Objectives:  Learn how to evaluate generative models: metrics for accuracy, fluency, and safety.\nUnderstand  evaluation  methods  (human  reviews,  automated  metrics  like  BLEU/ROUGE,  or  specialized\nsafety tools). Learn to track bias and performance drift.\nPrerequisites:  Experience building generative outputs, basic stats knowledge. \nWeek 1 Activities:\nAutomated Metrics:  Study standard metrics: BLEU, ROUGE, METEOR for text; perplexity. Use these\nto evaluate your",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 9,
+    "start_pos": 2000,
+    "end_pos": 2500,
+    "chunk_index": 61,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 65
+    }
+  },
+  {
+    "id": "e40e1122-5a89-4502-9166-fcab0a7331b7",
+    "text": "rics:  Study standard metrics: BLEU, ROUGE, METEOR for text; perplexity. Use these\nto evaluate your fine-tuned model vs baseline on a test set (e.g. some QA or summarization). \nFactuality & Hallucinations:  Research approaches for measuring factual accuracy (e.g. QAGen\nbenchmarks). Try an LLM evaluator like GPT-4 as a judge (LLM eval). • \n• \n• \n• \n• \n• \n• \n• \n• \n• \n9",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 9,
+    "start_pos": 2400,
+    "end_pos": 2769,
+    "chunk_index": 62,
+    "metadata": {
+      "char_count": 369,
+      "word_count": 62
+    }
+  },
+  {
+    "id": "1ae7f4da-904c-4612-86ca-b55c7561a0e2",
+    "text": "Fairness & Bias:  Review literature on AI fairness metrics. Run a fairness audit: e.g. feed your bot\nprompts with different gender/race contexts and compare responses. \nWeek 2 Activities:\nUser Feedback Loop:  Design a simple feedback mechanism (e.g. thumbs up/down UI) in one of your\napps. Collect sample “user” feedback on answers for analysis. \nSafety Filters:  Experiment with OpenAI Moderation API or Azure Content Moderator on your\noutputs. Check for banned content triggers. \nDocumentation:",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 10,
+    "start_pos": 0,
+    "end_pos": 498,
+    "chunk_index": 63,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "52c0909a-8300-4194-8d41-5a34dc45c5a5",
+    "text": "I or Azure Content Moderator on your\noutputs. Check for banned content triggers. \nDocumentation:  Prepare an evaluation report summarizing metrics and any discovered issues. \nDeliverables:  An evaluation summary document. Include metric scores (tables or charts) for your models,\nexamples of successes/failures, and steps taken to mitigate problems. If feasible, include a user feedback\nlog.\nAssessment Criteria:  Show clear evidence of rigorous testing: e.g. X% accuracy on dataset, or detection of",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 10,
+    "start_pos": 400,
+    "end_pos": 900,
+    "chunk_index": 64,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "88a84978-ac65-46ba-8df5-140ba19d7bf5",
+    "text": "nt Criteria:  Show clear evidence of rigorous testing: e.g. X% accuracy on dataset, or detection of\nhallucinations. Discuss any biases found and how to address them (citing guidelines). The report should\nconvincingly demonstrate model readiness. \nTime Commitment:  ~20 hours.\nRecommended Resources:  Papers on LLM evaluation (e.g. ChatEval); tutorials on BLEU/ROUGE; Microsoft\nResponsible AI Toolkit; OpenAI Moderation API docs.\nTools:  Python (NLTK/ROUGE libraries), Jupyter , any dashboards (e.g.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 10,
+    "start_pos": 800,
+    "end_pos": 1299,
+    "chunk_index": 65,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "20e75263-8a35-4d7f-b9c0-99e0979b6c5d",
+    "text": "OpenAI Moderation API docs.\nTools:  Python (NLTK/ROUGE libraries), Jupyter , any dashboards (e.g. MLflow for metrics), OpenAI/Anthropic\neval models. \nCheckpoint:  End of Week 32 – Ensure at least one automated metric and one human-eval method are\ndocumented. If scores are low, iterate on model or data. Confirm any content filters flag inappropriate\noutputs.\nAdvanced Agentic AI (Code Execution with MCP) – Weeks 33-34\nLearning Objectives:  Deepen agentic AI by enabling agents to write and execute",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 10,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 66,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 75
+    }
+  },
+  {
+    "id": "ba42e066-3027-4ea0-8bf9-fc1add687ff2",
+    "text": "h MCP) – Weeks 33-34\nLearning Objectives:  Deepen agentic AI by enabling agents to write and execute code (programmatic tool\nuse) as in Anthropic’s MCP code execution model . Build agents that can dynamically load tools (APIs/\ncode) and perform complex tasks.\nPrerequisites:  Python coding skills, experience with previous agent projects, MCP basics. \nWeek 1 Activities:\nStudy Code Execution:  Read Anthropic’s “Code execution with MCP” blog . Understand how\nloading tools as code (file APIs) reduces",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 10,
+    "start_pos": 1600,
+    "end_pos": 2101,
+    "chunk_index": 67,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 76
+    }
+  },
+  {
+    "id": "f28c1aa5-ce00-4a59-b9b9-c4c2765c8bbc",
+    "text": "nthropic’s “Code execution with MCP” blog . Understand how\nloading tools as code (file APIs) reduces context usage and costs. \nBuild Code-Agent Skeleton:  Create a Python agent framework where tools are implemented as\nPython functions (instead of on-model calls). E.g., have a folder of .py scripts each defining a tool. \nTool  Discovery:  Implement  a  mechanism  for  the  agent  to  list  available  tool  scripts  (e.g.  using\nos.listdir ) and import them on-demand. \nWeek 2 Activities:• \n• \n• \n•",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 10,
+    "start_pos": 2000,
+    "end_pos": 2501,
+    "chunk_index": 68,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 77
+    }
+  },
+  {
+    "id": "43fe2070-b510-4271-b808-6d4da4152423",
+    "text": "e  tool  scripts  (e.g.  using\nos.listdir ) and import them on-demand. \nWeek 2 Activities:• \n• \n• \n• \n• \n2\n• \n• 2\n• \n• \n• \n10",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 10,
+    "start_pos": 2400,
+    "end_pos": 2525,
+    "chunk_index": 69,
+    "metadata": {
+      "char_count": 125,
+      "word_count": 26
+    }
+  },
+  {
+    "id": "b1e8b360-e226-42d6-82e6-6d3939bf8154",
+    "text": "Agent Script Writing:  Give the LLM a task requiring multiple steps (like data extraction followed by\nanalysis). The LLM should output code (JavaScript/Python) that calls the needed tools. Execute this\ncode in a secure subprocess. \nEfficiency Gains:  Measure token usage for tool descriptions in-context vs via code execution.\nDemonstrate lowered token footprint as in Anthropic’s example. \nError Handling:  Implement timeouts and sanitization when running LLM-generated code to avoid\nmalicious loops.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 11,
+    "start_pos": 0,
+    "end_pos": 501,
+    "chunk_index": 70,
+    "metadata": {
+      "char_count": 501,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "be94fecc-f44d-46a9-a305-f3175ee12763",
+    "text": "dling:  Implement timeouts and sanitization when running LLM-generated code to avoid\nmalicious loops. \nDeliverables:  A proof-of-concept “code agent”: e.g. ask it to take data from one API and push to another via\ngenerated code. Include logs showing tool discovery and code execution steps. Provide documentation of\nthe tool directory structure.\nAssessment  Criteria:  Agent  successfully  writes  and  runs  code  to  achieve  tasks  without  human\nintervention. Compare token usage with and without",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 11,
+    "start_pos": 400,
+    "end_pos": 901,
+    "chunk_index": 71,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "dbd55abc-2760-41ec-8fca-401b5c6acdf1",
+    "text": "d  runs  code  to  achieve  tasks  without  human\nintervention. Compare token usage with and without code mode. Cite Anthropic’s approach  to explain\nyour design. \nTime Commitment:  ~30 hours.\nRecommended Resources:  Anthropic Code Execution blog ; Python’s  subprocess  documentation;\nLangChain “Agents with Python” examples; security best practices for code execution.\nTools:  Python, MCP SDK or custom micro-framework, Docker for sandboxing (optional), GPT-4/Claude API. \nCheckpoint:  End of Week",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 11,
+    "start_pos": 800,
+    "end_pos": 1300,
+    "chunk_index": 72,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 66
+    }
+  },
+  {
+    "id": "f9d10dd3-6f8c-43ab-a22b-d05ce2c4ad78",
+    "text": "stom micro-framework, Docker for sandboxing (optional), GPT-4/Claude API. \nCheckpoint:  End of Week 34 – Verify the agent can call at least 3 tools via generated code and handle tool\noutput correctly. Check for infinite loop protections. If it fails, refine the prompt that instructs LLM to write\ncorrect code (show example code).\nResponsible AI & Ethics in GenAI – Weeks 35-36\nLearning Objectives:  Understand the societal and ethical implications of GenAI. Learn best practices for\nfairness,",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 11,
+    "start_pos": 1200,
+    "end_pos": 1694,
+    "chunk_index": 73,
+    "metadata": {
+      "char_count": 493,
+      "word_count": 76
+    }
+  },
+  {
+    "id": "86e079e8-eac2-4ce1-b937-30e896f035d5",
+    "text": "Understand the societal and ethical implications of GenAI. Learn best practices for\nfairness, privacy, transparency, and compliance (e.g. GDPR, data privacy). Study principles (OECD, EU) for\ntrustworthy AI.\nPrerequisites:  Awareness of AI ethics issues (general), knowledge of legal/regulatory basics. \nWeek 1 Activities:\nEthical Frameworks:  Read OECD AI Principles or IEEE Trustworthy AI guidelines. Summarize key\npoints (e.g. human-centric, transparent AI). \nBias Mitigation:  Research",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 11,
+    "start_pos": 1600,
+    "end_pos": 2089,
+    "chunk_index": 74,
+    "metadata": {
+      "char_count": 488,
+      "word_count": 63
+    }
+  },
+  {
+    "id": "3de45528-1b4f-4220-8bbe-c9ec0852077e",
+    "text": ". Summarize key\npoints (e.g. human-centric, transparent AI). \nBias Mitigation:  Research tools/methods for mitigating bias in LLMs (e.g. data balancing,\nadversarial filtering). If time permits, run the Inclusive Images or similar bias tests on your data. \nPrivacy & Security:  Study privacy laws relevant to AI (GDPR data minimization, user consent). Plan\nhow user data in your applications should be handled (encryption, anonymization). \nWeek 2 Activities:\nAI Policy (Org):  Draft a basic “AI use",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 11,
+    "start_pos": 2000,
+    "end_pos": 2498,
+    "chunk_index": 75,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "90e02ca4-75d5-4d1e-ac4a-5600647b1613",
+    "text": "handled (encryption, anonymization). \nWeek 2 Activities:\nAI Policy (Org):  Draft a basic “AI use policy” for your projects: include data handling, review\nprocesses for outputs, user disclaimers. \nCase Study:  Analyze a recent GenAI incident (e.g. a widely-reported hallucination or bias case) and\nwrite a short memo on lessons learned. • \n• \n• \n2\n2\n• \n• \n• \n• \n• \n• \n• \n11",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 11,
+    "start_pos": 2400,
+    "end_pos": 2773,
+    "chunk_index": 76,
+    "metadata": {
+      "char_count": 372,
+      "word_count": 62
+    }
+  },
+  {
+    "id": "9b7d2f9b-3f1a-403b-be89-b73d9f07a2bf",
+    "text": "Discussion:  If possible, discuss with peers or mentors about responsible deployment: when not to\nallow certain content, etc. \nDeliverables:  A  brief  report  or  presentation  on  Responsible  AI.  Include  (a)  a  summary  of  standards/\nguidelines followed; (b) an audit of one of your apps for bias or privacy gaps; (c) an action plan to address\nissues (e.g. add filters, provide transparency to users).\nAssessment Criteria:  Show clear understanding of principles like fairness and privacy.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 12,
+    "start_pos": 0,
+    "end_pos": 497,
+    "chunk_index": 77,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "733391f0-ea67-4854-98e5-53ae85e74ab5",
+    "text": "users).\nAssessment Criteria:  Show clear understanding of principles like fairness and privacy. Action plans should\nbe  concrete  (e.g.  implement  differential  privacy  or  set  up  red-team  reviews).  Even  if  speculative,\ndemonstrate ethical reasoning. \nTime Commitment:  ~15 hours.\nRecommended Resources:  OECD AI Principles; EU AI Act summary; Articles on LLM hallucination/bias;\nOpenAI’s safety docs ; IEEE Ethically Aligned Design.\nTools:  No special tools, but use bias detection",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 12,
+    "start_pos": 400,
+    "end_pos": 892,
+    "chunk_index": 78,
+    "metadata": {
+      "char_count": 490,
+      "word_count": 65
+    }
+  },
+  {
+    "id": "fd27e44f-936f-4077-ba94-a87e57b9bef9",
+    "text": "fety docs ; IEEE Ethically Aligned Design.\nTools:  No special tools, but use bias detection libraries (e.g. IBM AI Fairness 360) if desired. \nCheckpoint:  End of Week 36 – Ensure you have identified at least two ethical risks in your work (e.g.\npotential user harm, privacy leaks). If any remain unaddressed, plan mitigations before going live.\nLLM for Code Generation – Weeks 37-38\nLearning Objectives:  Leverage LLMs to assist coding. Explore Codex/GPT’s coding capabilities. Build tools\n(e.g. a",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 12,
+    "start_pos": 800,
+    "end_pos": 1298,
+    "chunk_index": 79,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 78
+    }
+  },
+  {
+    "id": "252e1570-ae79-4d0c-90e8-fbff38e14f64",
+    "text": "es:  Leverage LLMs to assist coding. Explore Codex/GPT’s coding capabilities. Build tools\n(e.g. a coding assistant or test generator) that use LLMs to write or analyze code.\nPrerequisites:  Strong Python skills, familiarity with LLM APIs, and prior agent/prompt experience. \nWeek 1 Activities:\nStudy Codex/Coding LLMs:  Read about OpenAI Codex / GPT-4 Code (system card) to understand\ncapabilities and limitations. Look at examples of GPT writing functions. \nHands-on:  Use OpenAI Codex (via API) to",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 12,
+    "start_pos": 1200,
+    "end_pos": 1700,
+    "chunk_index": 80,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 73
+    }
+  },
+  {
+    "id": "d9244912-74e6-4578-8516-6b161d08b387",
+    "text": "d limitations. Look at examples of GPT writing functions. \nHands-on:  Use OpenAI Codex (via API) to solve a few programming tasks (e.g. “write a function that\nsorts a list of names ignoring case”). Compare with vanilla GPT-4. \nUnit Test Generation:  Experiment by asking the model to generate unit tests for a simple function\n(code->tests). \nWeek 2 Activities:\nDevelop a Coding Assistant:  Create a simple chat interface (could be CLI) where a user can ask\ncoding questions (e.g. “How to merge two",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 12,
+    "start_pos": 1600,
+    "end_pos": 2098,
+    "chunk_index": 81,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 81
+    }
+  },
+  {
+    "id": "15cd02db-b270-4724-b974-4f42ad1b01da",
+    "text": "imple chat interface (could be CLI) where a user can ask\ncoding questions (e.g. “How to merge two DataFrames in Pandas?”) and the LLM responds with code.\nImplement code execution sandbox to test the snippets (careful with security). \nAnalyze Code:  Ask the LLM to explain or refactor a piece of code you provide. Evaluate answer\ncorrectness. \nPerformance Tuning:  Try different prompt styles: fully direct code generation vs step-by-step\nexplanation. \nDeliverables:  A working coding assistant tool",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 12,
+    "start_pos": 2000,
+    "end_pos": 2499,
+    "chunk_index": 82,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 75
+    }
+  },
+  {
+    "id": "03783306-18ef-47ac-9525-8bf4ae055449",
+    "text": "irect code generation vs step-by-step\nexplanation. \nDeliverables:  A working coding assistant tool (script or small web app). Include sample interactions: e.g.\nuser query, LLM code output, execution result. Discuss areas where the LLM succeeded or failed.\nAssessment Criteria:  Assistant should handle at least 5 distinct coding queries correctly. Code samples• \n19\n• \n• \n• \n• \n• \n• \n• \n• \n12",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 12,
+    "start_pos": 2400,
+    "end_pos": 2792,
+    "chunk_index": 83,
+    "metadata": {
+      "char_count": 392,
+      "word_count": 60
+    }
+  },
+  {
+    "id": "89c3d7f3-b2df-4efe-ad12-e95e387fe369",
+    "text": "should run without syntax errors and meet specs. Evaluate on clarity and correctness of code. Cite OpenAI\ndocs or Codex paper for context. \nTime Commitment:  ~20 hours.\nRecommended Resources:  OpenAI “Codex” docs; GPT-4 Code system card; GitHub Copilot documentation;\nStackOverflow Developer Surveys (for example questions).\nTools:  OpenAI Codex/GPT-4 via API, Python, possibly a REPL/sandbox environment (e.g. Jupyter), Flask or\nStreamlit for interface. \nCheckpoint:  End of Week 38 – Check that the",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 13,
+    "start_pos": 0,
+    "end_pos": 501,
+    "chunk_index": 84,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "d4c5a31f-8dbc-4dd7-846c-69ac92420c97",
+    "text": "ment (e.g. Jupyter), Flask or\nStreamlit for interface. \nCheckpoint:  End of Week 38 – Check that the assistant’s code runs correctly for test queries. If it produces\nbugs, refine prompts or add examples. Confirm understanding by manually reviewing LLM answers for\nlogic errors.\nModel Optimization & Efficiency (LoRA, Quantization) – Weeks 39-40\nLearning  Objectives:  Learn  techniques  to  make  LLMs  efficient:  quantization  (lower  precision)  and\ndistillation/LoRA. Study how to deploy smaller",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 13,
+    "start_pos": 400,
+    "end_pos": 900,
+    "chunk_index": 85,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "930ebddb-e100-49e9-811d-cbba3268b365",
+    "text": "s  efficient:  quantization  (lower  precision)  and\ndistillation/LoRA. Study how to deploy smaller models for cost savings .\nPrerequisites:  LLM fine-tuning experience, knowledge of model internals. \nWeek 1 Activities:\nQuantization Theory:  Read about quantization techniques (8-bit, INT4). Use Hugging Face’s \ntransformers  and bitsandbytes  to quantize a small LLM (e.g. quantize a GPT-J model to 4-bit).\nLoRA Deep Dive:  If not already done, review PEFT/LoRA docs. Try varying LoRA rank to see",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 13,
+    "start_pos": 800,
+    "end_pos": 1298,
+    "chunk_index": 86,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "7a5218c7-930d-452a-98da-df78a4436675",
+    "text": "4-bit).\nLoRA Deep Dive:  If not already done, review PEFT/LoRA docs. Try varying LoRA rank to see trade-\noffs. \nSpeed Benchmarking:  Measure inference speed/memory before and after optimization on small\nhardware (use perf or time). \nWeek 2 Activities:\nDistillation:  Optionally, implement model distillation (e.g. train a smaller model on outputs of a\nlarge model). Use Hugging Face’s distillation examples if available. \nApply to App:  Replace your LLM in one of the earlier demos (e.g. chatbot)",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 13,
+    "start_pos": 1200,
+    "end_pos": 1697,
+    "chunk_index": 87,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 75
+    }
+  },
+  {
+    "id": "95999ca3-3057-42a5-a6d0-89d2e94095eb",
+    "text": "amples if available. \nApply to App:  Replace your LLM in one of the earlier demos (e.g. chatbot) with the optimized\nversion. Check if performance is still acceptable. \nCost Analysis:  Compute estimated cost savings for running optimized model at scale. \nDeliverables:  A report or notebook showing optimization steps. Include performance metrics (latency,\nmemory) before/after . Demonstrate a working quantized/LoRA model in your application.\nAssessment Criteria:  The optimized model should have",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 13,
+    "start_pos": 1600,
+    "end_pos": 2097,
+    "chunk_index": 88,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 69
+    }
+  },
+  {
+    "id": "0c6322b0-59d1-4532-820d-164482c25175",
+    "text": "quantized/LoRA model in your application.\nAssessment Criteria:  The optimized model should have notably lower resource use (e.g. >50% speedup or\nmemory reduction) with minimal drop in accuracy. Include logs or tables of resource metrics. Cite the Azure\nfine-tuning doc on LoRA benefits . \nTime Commitment:  ~25 hours.\nRecommended  Resources:  Hugging  Face  documentation  on  quantization  and  PEFT;  Papers  on\nquantization (LLM.int8 or QLoRA); Microsoft docs .7\n• \n• \n• \n• \n• \n• \n• \n• \n7\n7\n13",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 13,
+    "start_pos": 2000,
+    "end_pos": 2497,
+    "chunk_index": 89,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 76
+    }
+  },
+  {
+    "id": "60d43457-df66-4a0c-8e48-414a09dd1b8c",
+    "text": "Tools:  Hugging Face Transformers, bitsandbytes library, PyTorch, Python, hardware (local or Colab with\nGPU). \nCheckpoint:  End of Week 40 – Confirm quantized/LoRA model still produces coherent outputs. If accuracy\nsuffers too much, adjust quantization bit-width or LoRA rank. Ensure that improvements meet your speed/\nmemory goals.\nDomain-Specific GenAI Applications – Weeks 41-42\nLearning  Objectives:  Adapt  generative  AI  to  specialized  domains  (e.g.  medical,  legal,  finance).  Learn",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 14,
+    "start_pos": 0,
+    "end_pos": 496,
+    "chunk_index": 90,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 65
+    }
+  },
+  {
+    "id": "e3cbf86e-a1d8-40dd-a2b9-05bea797ffcf",
+    "text": "es:  Adapt  generative  AI  to  specialized  domains  (e.g.  medical,  legal,  finance).  Learn\ndomain fine-tuning and specialized retrieval. Understand domain compliance (e.g. HIPAA for health).\nPrerequisites:  Completion of fine-tuning/RAG topics, plus domain knowledge or willingness to research. \nWeek 1 Activities:\nChoose Domain:  Select a domain of interest (e.g. healthcare). Gather domain-specific corpus (e.g.\nPubMed abstracts, legal documents). \nCustom Data Prep:  Clean and preprocess",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 14,
+    "start_pos": 400,
+    "end_pos": 896,
+    "chunk_index": 91,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 62
+    }
+  },
+  {
+    "id": "0759bee3-87db-4563-a5e7-21c231cd361a",
+    "text": "cific corpus (e.g.\nPubMed abstracts, legal documents). \nCustom Data Prep:  Clean and preprocess domain text for finetuning or RAG. Ensure formatting\npreserves confidentiality if needed (anonymize data). \nBaseline Run:  Evaluate your general LLM on a small set of domain queries (e.g. clinical questions) to\nidentify gaps. \nWeek 2 Activities:\nApply RAG or Fine-Tune:  Depending on data volume, either fine-tune the LLM on domain data or\nbuild a specialized RAG index using domain texts. \nEvaluation:",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 14,
+    "start_pos": 800,
+    "end_pos": 1300,
+    "chunk_index": 92,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "0f46bfd1-feac-4af1-be75-03b2bc13f267",
+    "text": "fine-tune the LLM on domain data or\nbuild a specialized RAG index using domain texts. \nEvaluation:  Test the domain-adapted model vs base on a benchmark (if available) or synthetic\nqueries. Measure improvement in domain accuracy. \nCompliance Considerations:  Document any regulatory requirements (e.g. patient data privacy) and\nensure your process respects them (only public data, etc.). \nDeliverables:  A domain-specific GenAI demo (e.g. a Q&A on medical facts). Include a short technical note\non",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 14,
+    "start_pos": 1200,
+    "end_pos": 1698,
+    "chunk_index": 93,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "30797633-f249-4c58-9c14-47220f4d4240",
+    "text": "s:  A domain-specific GenAI demo (e.g. a Q&A on medical facts). Include a short technical note\non how you adapted the model/data, and any domain-specific evaluation results.\nAssessment Criteria:  The domain-adapted model should clearly outperform the base model on domain\nqueries (demonstrated via examples or metrics). Confirm any domain restrictions were handled (e.g. no PHI\nleaks). \nTime Commitment:  ~20 hours.\nRecommended Resources:  Domain corpora (e.g. PubMed, arXiv), relevant regulations",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 14,
+    "start_pos": 1600,
+    "end_pos": 2098,
+    "chunk_index": 94,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 69
+    }
+  },
+  {
+    "id": "9ce1bdac-137b-4bba-8264-1305bd0e61ba",
+    "text": "nt:  ~20 hours.\nRecommended Resources:  Domain corpora (e.g. PubMed, arXiv), relevant regulations (HIPAA summary if\nmedical); Tutorials on customizing LLMs for domain use (e.g. FinBERT for finance).\nTools:  Hugging Face, domain-specific APIs (optional), Python.\nCheckpoint:  End of Week 42 – Ensure your model’s outputs are accurate for domain queries. Check that no\nout-of-domain hallucinations occur (e.g. referencing non-existent studies). If issues, refine data or use\ndomain expert input.• \n• \n•",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 14,
+    "start_pos": 2000,
+    "end_pos": 2501,
+    "chunk_index": 95,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "8b255074-8210-48eb-96b3-63f103a63781",
+    "text": "r (e.g. referencing non-existent studies). If issues, refine data or use\ndomain expert input.• \n• \n• \n• \n• \n• \n• \n• \n14",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 14,
+    "start_pos": 2400,
+    "end_pos": 2519,
+    "chunk_index": 96,
+    "metadata": {
+      "char_count": 119,
+      "word_count": 22
+    }
+  },
+  {
+    "id": "cf647e02-95b1-40fb-830b-5753f6129018",
+    "text": "Data Engineering & Synthetic Data for GenAI – Weeks 43-44\nLearning  Objectives:  Learn  to  prepare  high-quality  training  data  for  GenAI.  Explore  synthetic  data\ngeneration to expand datasets. Understand data pipelines (scraping, cleaning, annotation) for building\ncorpora.\nPrerequisites:  Python scripting for data processing, knowledge of previous fine-tuning steps. \nWeek 1 Activities:\nData Collection:  Pick a topic and scrape or gather relevant text data (e.g. web APIs, public datasets).",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 15,
+    "start_pos": 0,
+    "end_pos": 501,
+    "chunk_index": 97,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "8e331694-a52b-43a3-a6e2-b0e1327f9e98",
+    "text": "Collection:  Pick a topic and scrape or gather relevant text data (e.g. web APIs, public datasets).\nUse Python (BeautifulSoup, Selenium) or APIs (Reddit, news). \nCleaning & Annotation:  Clean the data (remove HTML, duplicates). If building a dataset for a task\n(like QA), annotate a small subset manually (or using crowdsourced guidelines). \nPipeline Tools:  Familiarize with data pipelines (e.g. using Pandas, Apache Airflow, or Azure Data\nFactory for larger flow). Build a script that processes",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 15,
+    "start_pos": 400,
+    "end_pos": 898,
+    "chunk_index": 98,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "f123ed7a-874a-4d3e-bc5e-34d1b552fc57",
+    "text": "ing Pandas, Apache Airflow, or Azure Data\nFactory for larger flow). Build a script that processes raw data to a clean JSONL. \nWeek 2 Activities:\nSynthetic Data Generation:  Use your LLM to augment data. For instance, generate paraphrases or\nnew QA pairs. Validate quality by manual review. \nQuality Checks:  Write tests (regex or scripts) to check dataset integrity (no nulls, proper JSONL\nformat, token length within limits). \nReuse & Versioning:  Store dataset in a version control (Git LFS or DVC)",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 15,
+    "start_pos": 800,
+    "end_pos": 1301,
+    "chunk_index": 99,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 80
+    }
+  },
+  {
+    "id": "e4704485-d713-4d22-a2db-c2fe4152d5b4",
+    "text": "ken length within limits). \nReuse & Versioning:  Store dataset in a version control (Git LFS or DVC) and document schema (e.g.\ncolumn meanings). \nDeliverables:  A packaged dataset ready for fine-tuning or evaluation. Include data pipeline code and a\nREADME  describing  source,  cleaning  steps,  and  format.  Optionally,  include  synthetic  vs  real  data\ncomparison results.\nAssessment Criteria:  The dataset should be non-trivial in size (e.g. 1000+ examples). Check that it’s clean\n(no",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 15,
+    "start_pos": 1200,
+    "end_pos": 1692,
+    "chunk_index": 100,
+    "metadata": {
+      "char_count": 491,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "c189898f-8a88-40f6-b6ec-a57acf9d1150",
+    "text": "The dataset should be non-trivial in size (e.g. 1000+ examples). Check that it’s clean\n(no formatting errors) and relevant. Demonstrate understanding by explaining one data challenge and how\nyou solved it (e.g. handling outliers). \nTime Commitment:  ~15 hours.\nRecommended Resources:  Articles on data preparation for ML; Azure Data Factory tutorials; Hugging Face\nDatasets guide; Cloud provider data lakes (if applicable).\nTools:  Python (pandas, requests, BeautifulSoup), DVC/Git for data",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 15,
+    "start_pos": 1600,
+    "end_pos": 2092,
+    "chunk_index": 101,
+    "metadata": {
+      "char_count": 490,
+      "word_count": 68
+    }
+  },
+  {
+    "id": "da0ea774-806b-4e14-abbd-9d6364210bdc",
+    "text": "a lakes (if applicable).\nTools:  Python (pandas, requests, BeautifulSoup), DVC/Git for data versioning, Azure Data Factory or Apache\nAirflow (optional for pipeline orchestration).\nCheckpoint:  End of Week 44 – Validate dataset with a small model test (e.g. see if a simple fine-tune yields\nnon-zero improvements). If data quality issues arise, iterate on cleaning.\nLangChain & LLM Frameworks – Weeks 45-46\nLearning Objectives:  Gain proficiency with popular GenAI developer frameworks. Use LangChain",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 15,
+    "start_pos": 2000,
+    "end_pos": 2500,
+    "chunk_index": 102,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "347b90df-d557-4a23-8dde-326e6b8e2c28",
+    "text": "45-46\nLearning Objectives:  Gain proficiency with popular GenAI developer frameworks. Use LangChain (chains,\nagents, memory) and LlamaIndex/RAG frameworks to build complex apps more efficiently.• \n• \n• \n• \n• \n• \n• \n• \n15",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 15,
+    "start_pos": 2400,
+    "end_pos": 2620,
+    "chunk_index": 103,
+    "metadata": {
+      "char_count": 220,
+      "word_count": 32
+    }
+  },
+  {
+    "id": "128a7bb9-ba07-4c1a-bb29-737006441c5b",
+    "text": "Prerequisites:  Completed agent and RAG topics; Python experience; this assumes motivation to use a\nhigher-level library. \nWeek 1 Activities:\nLangChain Basics:  Follow LangChain docs to build a simple chain: e.g. a conversation chain or\nLLMChain that formats a prompt with user input . \nMemory & State:  Learn LangChain memory modules. Implement a chatbot with memory where it\nremembers user’s name/preferences across turns. \nLlamaIndex  (or  Alternative):  Explore  LlamaIndex  (GPT  Index)  for",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 16,
+    "start_pos": 0,
+    "end_pos": 498,
+    "chunk_index": 104,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 70
+    }
+  },
+  {
+    "id": "2009aa2a-1563-45b5-a800-173326e5c5ee",
+    "text": "references across turns. \nLlamaIndex  (or  Alternative):  Explore  LlamaIndex  (GPT  Index)  for  knowledge  retrieval.  Index  a\ncustom document (e.g. your notes) and query it via LLM. \nWeek 2 Activities:\nMulti-Agent Systems:  If ambitious, experiment with LangChain’s multi-agent systems or LangGraph\nto coordinate multiple agents (each with a specialty). For example, combine a retrieval agent and a\nsummarization agent. \nDebugger Tools:  Use LangSmith (or any available tracing tool) to debug",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 16,
+    "start_pos": 400,
+    "end_pos": 897,
+    "chunk_index": 105,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 68
+    }
+  },
+  {
+    "id": "47b921cd-6112-4c36-bb7c-d56afb98bff3",
+    "text": "a\nsummarization agent. \nDebugger Tools:  Use LangSmith (or any available tracing tool) to debug chain execution. Analyze\ntoken usage and errors in chain steps. \nOpenAI Agents SDK:  Optionally try using OpenAI’s new Agents SDK (if accessible) to compare with\nLangChain. \nDeliverables:  A mini-project built entirely with LangChain (and optionally LlamaIndex). For instance, a multi-\nstep assistant that uses multiple chains or tools (search, database lookup). Provide code and a flowchart of\nthe",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 16,
+    "start_pos": 800,
+    "end_pos": 1296,
+    "chunk_index": 106,
+    "metadata": {
+      "char_count": 494,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "48eadcea-3571-4a31-90ed-1a49c91f6810",
+    "text": "at uses multiple chains or tools (search, database lookup). Provide code and a flowchart of\nthe chain.\nAssessment  Criteria:  Code  should  use  the  framework  idiomatically  (e.g.  using  LLMChain , \nAgentExecutor ).  The  app  should  run  correctly,  and  a  log/tracer  should  show  each  chain  step.  Cite\nLangChain documentation or SDK references to explain structure. \nTime Commitment:  ~25 hours.\nRecommended  Resources:  LangChain  official  docs  (Chains,  Agents) ;  LangChain  YouTube",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 16,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 107,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "0f21cdf0-d1b7-46ca-bb16-c51f296d89aa",
+    "text": "hours.\nRecommended  Resources:  LangChain  official  docs  (Chains,  Agents) ;  LangChain  YouTube  tutorials;\nLlamaIndex documentation; OpenAI Agents SDK docs.\nTools:  LangChain (Python), LlamaIndex or equivalent, Python, LangSmith (for tracing).\nCheckpoint:  End of Week 46 – Ensure your LangChain app handles a complete user request without error . If\na component fails (e.g. retrieval returns empty), debug with provided tools. Confirm you understand each\npart of the chain by explaining it.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 16,
+    "start_pos": 1600,
+    "end_pos": 2097,
+    "chunk_index": 108,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 69
+    }
+  },
+  {
+    "id": "1782ac71-7571-43ae-ad9b-6ad43c6a342f",
+    "text": "pty), debug with provided tools. Confirm you understand each\npart of the chain by explaining it.\nCutting-edge Research & Trends – Weeks 47-48\nLearning  Objectives:  Survey  the  latest  GenAI  research  to  stay  ahead.  Topics  may  include  RLHF\nadvancements, emerging model architectures, open-source LLM progress, or novel applications (e.g. AI\nagents in software development).\nPrerequisites:  Broad GenAI knowledge (as above). Openness to reading research. \nWeek 1 Activities:• \n• \n20\n• \n• \n• \n•",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 16,
+    "start_pos": 2000,
+    "end_pos": 2501,
+    "chunk_index": 109,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "f26c1a4a-d6b3-4209-8e4d-205bf9a38a46",
+    "text": "oad GenAI knowledge (as above). Openness to reading research. \nWeek 1 Activities:• \n• \n20\n• \n• \n• \n• \n• \n• \n20\n• \n16",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 16,
+    "start_pos": 2400,
+    "end_pos": 2516,
+    "chunk_index": 110,
+    "metadata": {
+      "char_count": 116,
+      "word_count": 23
+    }
+  },
+  {
+    "id": "5041b609-64aa-401e-b742-1e783c691f40",
+    "text": "Read Recent Papers:  Pick 2–3 high-impact recent papers (2024–2025) in GenAI. Possibilities:\n“OpenAI Evals”, “GPT agents evaluation”, “LLM alignment survey”. Summarize key findings. \nOpen Source Models:  Explore new open models (e.g. LLaMA-3, Mistral-7B). Read their release notes\nor paper abstracts. Evaluate if/how you could use them. \nCommunity  Tools:  Try  a  new  tool  or  library  you  haven’t  used  (e.g.  Ray’s  RL  for  LLMs,  a  new\nannotation tool, or an agent playground). \nWeek 2",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 17,
+    "start_pos": 0,
+    "end_pos": 496,
+    "chunk_index": 111,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 72
+    }
+  },
+  {
+    "id": "8b3c00e1-c43e-4cda-bc72-21e0350ef5cc",
+    "text": "t  used  (e.g.  Ray’s  RL  for  LLMs,  a  new\nannotation tool, or an agent playground). \nWeek 2 Activities:\nApply a Research Idea:  Take one promising idea (e.g. Alpaca or RLHF methods) and implement a toy\nversion. For example, fine-tune a model on human preference data, or apply a new decoding\nstrategy (like Self-Consistency decoding). \nBenchmark:  If possible, evaluate your implementation against a baseline on a public benchmark\n(e.g. HuggingFace leaderboard or a small metric test).",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 17,
+    "start_pos": 400,
+    "end_pos": 891,
+    "chunk_index": 112,
+    "metadata": {
+      "char_count": 489,
+      "word_count": 75
+    }
+  },
+  {
+    "id": "bd954150-4b6b-4c9a-ae2d-69e0377dd162",
+    "text": "t a baseline on a public benchmark\n(e.g. HuggingFace leaderboard or a small metric test). \nPresentation:  Prepare a short presentation (slides or document) on “Future of GenAI” focusing on\nwhat you learned. \nDeliverables:  A research review document (with references) and any prototype code. For example, include a\nsummary of one paper and some illustrative results from your mini-experiment.\nAssessment Criteria:  Demonstrate critical understanding of the research. In your prototype, clearly state",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 17,
+    "start_pos": 800,
+    "end_pos": 1300,
+    "chunk_index": 113,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "3cb858e1-daf1-4332-9279-55ef6413721d",
+    "text": "ent Criteria:  Demonstrate critical understanding of the research. In your prototype, clearly state\nwhat was replicated and what the outcome was. Even a negative result is fine if well-explained. \nTime Commitment:  ~20 hours.\nRecommended Resources:  ArXiv.org (2024-25 GenAI papers); Hugging Face Model hub (for open models);\nAI research blogs (Anthropic, DeepMind, etc.); GPT-Engineer or Oobabooga new tools.\nTools:  Python, Pytorch (for experiments), any necessary LLM API (if using GPT for eval),",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 17,
+    "start_pos": 1200,
+    "end_pos": 1700,
+    "chunk_index": 114,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "6a2c73c6-e8f1-466d-9fff-9e9c345d31a1",
+    "text": "ew tools.\nTools:  Python, Pytorch (for experiments), any necessary LLM API (if using GPT for eval), Google Scholar .\nCheckpoint:  End of Week 48 – Verify that your write-up captures at least 3 new trends. If a prototype was\nbuilt, ensure it runs and connects to a baseline. Discuss in writing how it advances or differs from known\napproaches.\nCapstone Integration Project – Weeks 49-50 (Bonus Weeks)\nLearning Objectives:  Consolidate all learning in a final project. Build a full-stack GenAI",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 17,
+    "start_pos": 1600,
+    "end_pos": 2092,
+    "chunk_index": 115,
+    "metadata": {
+      "char_count": 491,
+      "word_count": 80
+    }
+  },
+  {
+    "id": "e34c3a6a-f8e0-45ce-b742-17c5659e1ac6",
+    "text": "Learning Objectives:  Consolidate all learning in a final project. Build a full-stack GenAI application or\nresearch deliverable that showcases multiple skills (prompting, agentic LLM, cloud deployment, etc.).\nPrerequisites:  Completion of most prior topics; ability to plan independently. \nWeeks 49-50 Activities:\nProject Planning:  Define the project (e.g. an AI assistant for a specific domain, or an end-to-end\nGenAI pipeline). Outline features drawing on earlier modules (e.g. uses RAG, has UI,",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 17,
+    "start_pos": 2000,
+    "end_pos": 2499,
+    "chunk_index": 116,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 69
+    }
+  },
+  {
+    "id": "51212f5c-2033-4342-80e8-8360e5dfa4f4",
+    "text": "an end-to-end\nGenAI pipeline). Outline features drawing on earlier modules (e.g. uses RAG, has UI, deployed on\nAzure). \nImplementation:  Execute the plan. This is largely self-directed: use code from previous work,\nintegrate services, refine UI. \nTesting & Documentation:  Thoroughly test all components. Prepare a report or presentation\nsummarizing the project architecture, chosen techniques, and results. • \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n17",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 17,
+    "start_pos": 2400,
+    "end_pos": 2843,
+    "chunk_index": 117,
+    "metadata": {
+      "char_count": 443,
+      "word_count": 67
+    }
+  },
+  {
+    "id": "d71e6dd1-3c5c-4195-81a3-60469c9e6714",
+    "text": "Deliverables:  A deployed end-to-end GenAI application or a detailed project report (with code link). Could\nbe a video demo or a live web app. Include discussion of how prior topics were integrated.\nAssessment Criteria:  Judged on completeness and integration of skills. The project should solve a non-\ntrivial problem and be demonstrably functional. Clarity of documentation and technical depth is critical. \nTime Commitment:  ~40 hours. \nCheckpoint:  End of Week 50 – Gather feedback (peer review",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 18,
+    "start_pos": 0,
+    "end_pos": 499,
+    "chunk_index": 118,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 75
+    }
+  },
+  {
+    "id": "f1161c0b-24f2-4e43-ae5d-393a7f43cc6b",
+    "text": "ritical. \nTime Commitment:  ~40 hours. \nCheckpoint:  End of Week 50 – Gather feedback (peer review or mentors). Identify any remaining gaps for\nfuture learning (to be carried into Weeks 51-52 if time). \nTopic Comparison Table\nTopic Difficulty Prerequisites GenAI Career Impact\nAgentic AI & Tools (MCP) Advanced LLM usage, API basicsHigh  (enables intelligent\nagents)\nPrompt Engineering & CoT Intermediate LLM basicsHigh (foundation for\nreasoning tasks)\nFine-tuning & Adaptation AdvancedML",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 18,
+    "start_pos": 400,
+    "end_pos": 889,
+    "chunk_index": 119,
+    "metadata": {
+      "char_count": 488,
+      "word_count": 69
+    }
+  },
+  {
+    "id": "ad140aff-8c2e-475c-b6ba-283b6ae448ce",
+    "text": "iate LLM basicsHigh (foundation for\nreasoning tasks)\nFine-tuning & Adaptation AdvancedML fundamentals,\nPyTorchHigh (customize models for\nproducts)\nRetrieval-Augmented Gen\n(RAG)IntermediateEmbeddings,\ndatabasesHigh (improves factual\naccuracy)\nConversational Agents/\nChatbotsIntermediateBot frameworks,\ndialog flowMedium-High (customer-\nfacing apps)\nMultimodal AI\n(Vision+Language)Advanced Vision basics, APIsMedium (cutting-edge field)\nAzure OpenAI & AI Services Intermediate Azure basics High",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 18,
+    "start_pos": 800,
+    "end_pos": 1293,
+    "chunk_index": 120,
+    "metadata": {
+      "char_count": 492,
+      "word_count": 50
+    }
+  },
+  {
+    "id": "dcd51572-acdc-408b-b1a5-7e7afb0bc001",
+    "text": "s, APIsMedium (cutting-edge field)\nAzure OpenAI & AI Services Intermediate Azure basics High (industry demand)\nDeployment & MLOps AdvancedDevOps, cloud\nservicesHigh (production-readiness)\nEvaluation & Metrics Intermediate Statistics Medium (ensures quality)\nAdvanced Agents (Code\nExecution)Advanced Python, securityMedium-High (scalable\nagents)\nResponsible AI & Ethics IntermediateAwareness of AI\nissuesHigh (enterprise expectation)\nLLM for Code Generation Intermediate Programming Medium (developer",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 18,
+    "start_pos": 1200,
+    "end_pos": 1700,
+    "chunk_index": 121,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 56
+    }
+  },
+  {
+    "id": "2bfecbf6-1c1b-4a06-b77b-48d575666e75",
+    "text": "uesHigh (enterprise expectation)\nLLM for Code Generation Intermediate Programming Medium (developer tools)\nModel Optimization\n(LoRA,Quant.)AdvancedML & hardware\nknowledgeMedium (cost savings)1\n6\n8\n11\n16\n2\n18",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 18,
+    "start_pos": 1600,
+    "end_pos": 1807,
+    "chunk_index": 122,
+    "metadata": {
+      "char_count": 207,
+      "word_count": 26
+    }
+  },
+  {
+    "id": "d2cf7637-2612-43ed-b620-2438326b0a2b",
+    "text": "Topic Difficulty Prerequisites GenAI Career Impact\nDomain-Specific GenAI Intermediate Domain knowledgeMedium-High (custom\nsolutions)\nData Engineering for GenAI Intermediate Data pipelines High (foundation of training)\nLangChain & LLM\nFrameworksIntermediatePython, LLM API\nknowledgeHigh (accelerates\ndevelopment)\nCutting-edge Research &\nTrendsAdvanced Research literacy Medium (innovation focus)\nCapstone Project Advanced All of aboveHigh (capstone showcases\nskills)\nCheckpoints & Progress Reviews\nAt",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 19,
+    "start_pos": 0,
+    "end_pos": 500,
+    "chunk_index": 123,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 56
+    }
+  },
+  {
+    "id": "1bd85cb2-728e-49bd-a5b8-a82e19d0a579",
+    "text": "one Project Advanced All of aboveHigh (capstone showcases\nskills)\nCheckpoints & Progress Reviews\nAt the end of each two-week slot, you should review learning objectives and deliverables . Ensure that the\nconcrete deliverables (code, reports, demos) meet the assessment criteria. Example checkpoint questions:\n-  Agentic AI & MCP:  Does your agent correctly use external tools? Can you add a new tool with minimal\nchanges?\n- Prompt/CoT:  Do your prompts noticeably improve performance (e.g. higher",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 19,
+    "start_pos": 400,
+    "end_pos": 897,
+    "chunk_index": 124,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "bc3dba9b-3058-426b-9d00-472560d53c2f",
+    "text": "with minimal\nchanges?\n- Prompt/CoT:  Do your prompts noticeably improve performance (e.g. higher accuracy)?\n- Fine-tuning:  Does the fine-tuned model outperform the base model on your domain?\n- RAG:  Are retrieved documents relevant? Does the RAG system produce factual answers?\n- Deployment:  Can you redeploy quickly via CI/CD? Does monitoring show correct behavior? \nUse these reviews to decide if any topics need extra time. Document any issues and corrective actions\nbefore moving on.\n3-Month",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 19,
+    "start_pos": 800,
+    "end_pos": 1298,
+    "chunk_index": 125,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "cb4b357a-1efd-4ae2-9971-d135227506a7",
+    "text": "any topics need extra time. Document any issues and corrective actions\nbefore moving on.\n3-Month Intensive Sprint Plan (Weeks 15–26)\nFor a focused 3-month sprint, we concentrate on the first six topics (Agentic AI through Azure Services) with\na detailed weekly breakdown:\nWeek 15 (Mon–Sun): Agentic AI & Tools – Day 1–7\nDay 1:  Read Anthropic MCP announcement  and Google Apigee blog  (2h). \nDay 2:  Follow an OpenAI function-calling tutorial (2h). Write Python script calling a sample API via\nGPT.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 19,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 126,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 80
+    }
+  },
+  {
+    "id": "8282940c-9571-433e-a2ea-c67454093e44",
+    "text": "Follow an OpenAI function-calling tutorial (2h). Write Python script calling a sample API via\nGPT. \nDay 3:  Code initial LangChain agent with a simple tool (web search) (4h). \nDay 4–5:  Debug agent integration, refine prompts (4h). \nDay 6:  Write README explaining tool usage (2h). \nDay 7:  Self-review and checkpoint: test 3 sample queries, fix bugs (4h). \nWeek 16: Agentic AI & Tools – Day 8–14\nDay 8:  Learn MCP server basics (Anthropic docs) (2h). • \n• 1 3\n• \n• \n• \n• \n• \n• \n• \n19",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 19,
+    "start_pos": 1600,
+    "end_pos": 2085,
+    "chunk_index": 127,
+    "metadata": {
+      "char_count": 484,
+      "word_count": 86
+    }
+  },
+  {
+    "id": "d2b5f045-1532-4609-9849-ef1883011324",
+    "text": "Day 9:  Implement a local MCP server with two tools (3h). \nDay 10:  Write MCP client in Python and connect (3h). \nDay 11:  Test LLM calls to MCP tools; fix context prompts (4h). \nDay 12:  Document MCP integration (2h). \nDay 13–14:  Final testing and checkpoint (fix any context errors) (4h). \nWeek 17 (Prompt Engineering): Days 15–21\nDay 15:  Read Chain-of-Thought paper  (3h). \nDay 16:  Implement CoT on sample math problems with GPT-4 (4h). \nDay 17:  Compare few-shot vs zero-shot vs CoT (2h). \nDay",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 20,
+    "start_pos": 0,
+    "end_pos": 501,
+    "chunk_index": 128,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 83
+    }
+  },
+  {
+    "id": "843abb4c-5649-4f9a-802b-6f7753241590",
+    "text": "T on sample math problems with GPT-4 (4h). \nDay 17:  Compare few-shot vs zero-shot vs CoT (2h). \nDay 18:  Build prompt templates for a task (e.g. summarization) (3h). \nDay 19:  Test and refine prompts (2h). \nDay 20–21:  Checkpoint: analyze how accuracy improved, prepare summary (4h). \nWeek 18: Days 22–28\nDay 22:  Experiment with self-consistency sampling (2h). \nDay 23:  Tackle a mini-project (e.g. chatbot reasoning) (4h). \nDay 24:  Optimize prompts with system messages (2h). \nDay 25:  Write",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 20,
+    "start_pos": 400,
+    "end_pos": 896,
+    "chunk_index": 129,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 76
+    }
+  },
+  {
+    "id": "80be659d-e0ec-4487-aac2-1f1210344648",
+    "text": "chatbot reasoning) (4h). \nDay 24:  Optimize prompts with system messages (2h). \nDay 25:  Write prompt guidelines document (2h). \nDay 26–28:  Final tests and checkpoint (4h). \nWeek 19 (Fine-Tuning): Days 29–35\nDay 29:  Study Azure fine-tuning guide  (2h). \nDay 30:  Collect or generate a small dataset; format as JSONL  (4h). \nDay 31–32:  Run a quick fine-tune on a small model (4h). \nDay 33:  Implement LoRA version (3h). \nDay 34:  Evaluate outputs on test set (2h). \nDay 35:  Checkpoint: document",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 20,
+    "start_pos": 800,
+    "end_pos": 1299,
+    "chunk_index": 130,
+    "metadata": {
+      "char_count": 497,
+      "word_count": 78
+    }
+  },
+  {
+    "id": "185a0c9b-8541-42ec-bb72-cac3d544517b",
+    "text": "ent LoRA version (3h). \nDay 34:  Evaluate outputs on test set (2h). \nDay 35:  Checkpoint: document performance gains and token savings  (4h). \nWeek 20: Days 36–42\nDay 36–37:  Iterate training (tune hyperparams) (4h). \nDay 38:  Deploy fine-tuned model to test (2h). \nDay 39–40:  Compare outputs side-by-side; write report (4h). \nDay 41–42:  Checkpoint and wrap-up (sample demos) (4h). \nWeek 21 (RAG): Days 43–49\nDay 43:  Read RAG paper  (3h). \nDay 44:  Set up FAISS index with a text corpus (3h). • \n•",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 20,
+    "start_pos": 1200,
+    "end_pos": 1701,
+    "chunk_index": 131,
+    "metadata": {
+      "char_count": 500,
+      "word_count": 81
+    }
+  },
+  {
+    "id": "f7d108eb-2d07-42d7-9e2c-0effdea24164",
+    "text": "Days 43–49\nDay 43:  Read RAG paper  (3h). \nDay 44:  Set up FAISS index with a text corpus (3h). • \n• \n• \n• \n• \n• \n• 6\n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• 8\n• 9\n• \n• \n• \n• 7\n• \n• \n• \n• \n• \n• \n• 11\n• \n20",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 20,
+    "start_pos": 1600,
+    "end_pos": 1803,
+    "chunk_index": 132,
+    "metadata": {
+      "char_count": 203,
+      "word_count": 58
+    }
+  },
+  {
+    "id": "d78cbc73-2da4-4af9-a2df-a29e030b71fb",
+    "text": "Day 45:  Query LLM with retrieval chain (3h). \nDay 46:  Set up Azure Vector Search index  (4h). \nDay 47:  Connect Azure OpenAI to query index (2h). \nDay 48:  Test hybrid searches  (2h). \nDay 49:  Checkpoint: compare RAG vs plain LLM answers (3h). \nWeek 22: Days 50–56\nDay 50–51:  Optimize retrieval (adjust k, embeddings) (3h). \nDay 52:  Build simple UI or CLI for RAG QA (3h). \nDay 53:  Document RAG pipeline with architecture diagram (2h). \nDay 54–55:  Final tests, error-check (3h). \nDay 56:",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 21,
+    "start_pos": 0,
+    "end_pos": 496,
+    "chunk_index": 133,
+    "metadata": {
+      "char_count": 494,
+      "word_count": 82
+    }
+  },
+  {
+    "id": "27055546-d849-4a28-aa16-a771e8d25bcf",
+    "text": "pipeline with architecture diagram (2h). \nDay 54–55:  Final tests, error-check (3h). \nDay 56:  Checkpoint: ensure retrieval relevance and report accuracy gains (4h). \nWeek 23 (Conversational Agents): Days 57–63\nDay 57:  Set up Rasa or Bot Service skeleton (3h). \nDay 58:  Create basic FAQ bot (no LLM) (3h). \nDay 59:  Integrate LLM for response generation (3h). \nDay 60:  Implement conversation memory (2h). \nDay 61:  Test multi-turn dialogues (2h). \nDay 62:  Add system prompts (2h). \nDay 63:",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 21,
+    "start_pos": 400,
+    "end_pos": 896,
+    "chunk_index": 134,
+    "metadata": {
+      "char_count": 493,
+      "word_count": 75
+    }
+  },
+  {
+    "id": "8e047770-8f76-437a-8536-c3a283fe7681",
+    "text": "ry (2h). \nDay 61:  Test multi-turn dialogues (2h). \nDay 62:  Add system prompts (2h). \nDay 63:  Checkpoint: chat evaluation (4h). \nWeek 24: Days 64–70\nDay 64:  Wrap up conversational agent (fix dialog bugs) (3h). \nDay 65:  Deploy chatbot (Azure Web App) (3h). \nDay 66:  Conduct sample user session tests (3h). \nDay 67:  Document bot logic and choices (2h). \nDay 68–70:  Checkpoint: gather user feedback, finalize improvements (4h). \nWeek 25 (Multimodal AI): Days 71–77\nDay 71:  Read GPT-4 Vision",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 21,
+    "start_pos": 800,
+    "end_pos": 1296,
+    "chunk_index": 135,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 78
+    }
+  },
+  {
+    "id": "e7b7b1ca-d97c-48c8-8268-21d50fd61c79",
+    "text": "ck, finalize improvements (4h). \nWeek 25 (Multimodal AI): Days 71–77\nDay 71:  Read GPT-4 Vision report  (2h). \nDay 72:  Use CLIP to match images and captions (3h). \nDay 73:  Build image caption bot (API call or notebook) (3h). \nDay 74:  Integrate GPT-4V (if available) for Q&A on images (3h). \nDay 75:  Try DALL·E or Stable Diffusion for simple prompts (4h). \nDay 76–77:  Checkpoint: analyze multimodal outputs, document capabilities (4h). \nWeek 26: Days 78–84• \n• 12\n• \n• 13\n• \n• \n• \n• \n• \n• \n• \n•",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 21,
+    "start_pos": 1200,
+    "end_pos": 1700,
+    "chunk_index": 136,
+    "metadata": {
+      "char_count": 498,
+      "word_count": 86
+    }
+  },
+  {
+    "id": "564cb8ec-963c-41a5-8f85-53aaabc2b845",
+    "text": "al outputs, document capabilities (4h). \nWeek 26: Days 78–84• \n• 12\n• \n• 13\n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• 16\n• \n• \n• \n• \n• \n• \n21",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 21,
+    "start_pos": 1600,
+    "end_pos": 1767,
+    "chunk_index": 137,
+    "metadata": {
+      "char_count": 167,
+      "word_count": 45
+    }
+  },
+  {
+    "id": "b05a0c00-189a-4b6d-a2a4-efa40b08cfed",
+    "text": "Day 78:  Create a final multimodal demo (5h). \nDay 79:  Test on varied inputs (3h). \nDay 80:  Write short analysis of results (2h). \nDay 81–84:  Sprint summary report (compilation of all learnings) (6h). \nThis sprint is intensive: plan for ~6–8 hours per day. Adjust as needed. Use weekends for catch-up or deep\nwork.\nLightweight Alternative Plan\nFor a limited-time schedule, focus on core priorities  and streamline work:\nTop-Priority Topics:  Agentic AI, Prompt Engineering, RAG, Azure GenAI",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 22,
+    "start_pos": 0,
+    "end_pos": 494,
+    "chunk_index": 138,
+    "metadata": {
+      "char_count": 493,
+      "word_count": 76
+    }
+  },
+  {
+    "id": "84a0b1a3-67b2-42c1-8f7d-d09347b87804",
+    "text": "and streamline work:\nTop-Priority Topics:  Agentic AI, Prompt Engineering, RAG, Azure GenAI Services, Deployment, Ethics.\n(Skip deep dives into audio, video, advanced agents code, etc.) \nCompressing Schedule:  Allocate 2–3 weeks per topic instead of 2. Use more prompts and fewer\ncoding projects. For example: \nAgents/MCP (Weeks 15–17):  Do a high-level project (LangChain agent) and read MCP summary. \nPrompt/CoT (Weeks 18–19):  Focus on mastery of prompt patterns; skip building a full chatbot.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 22,
+    "start_pos": 400,
+    "end_pos": 900,
+    "chunk_index": 139,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "d5c463df-296d-4b69-8e1c-b0df01e888a1",
+    "text": "ry. \nPrompt/CoT (Weeks 18–19):  Focus on mastery of prompt patterns; skip building a full chatbot. \nRAG (Weeks 20–21):  Set up a simple vector search + LLM demo (possibly using Azure Search directly). \nAzure Deployment (Weeks 22–23):  Create one cloud project (e.g. deploy a basic web app calling Azure\nOpenAI). \nEvaluations & Ethics (Weeks 24–25):  Review metrics and ethical guidelines at high level (maybe trade\npaper-reading for reading blog summaries). \nReduced Depth:  Use more “official",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 22,
+    "start_pos": 800,
+    "end_pos": 1294,
+    "chunk_index": 140,
+    "metadata": {
+      "char_count": 493,
+      "word_count": 74
+    }
+  },
+  {
+    "id": "7c571396-45c4-4a1d-8e91-47944af9c0a5",
+    "text": "l (maybe trade\npaper-reading for reading blog summaries). \nReduced Depth:  Use more “official quickstart” resources and prebuilt code examples. Focus on\nunderstanding rather than custom implementation. \nDeliverables:  Aim for one solid project (e.g. a deployed chatbot with RAG) and concise write-ups\ninstead of multiple mini-projects. \nBy concentrating on these key areas, even a 3–4 month plan can yield a strong foundational skillset in\nGenAI. Prioritize  hands-on practice  in Agents and RAG",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 22,
+    "start_pos": 1200,
+    "end_pos": 1696,
+    "chunk_index": 141,
+    "metadata": {
+      "char_count": 495,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "eed8f895-0522-4556-8559-b29dd714ce46",
+    "text": "yield a strong foundational skillset in\nGenAI. Prioritize  hands-on practice  in Agents and RAG (high-impact) and ensure you at least touch on\ncloud integration and ethics.\nSources\nWe have prioritized official and academic sources throughout. For example, the Model Context Protocol\n(MCP) is detailed by Anthropic , and its efficient “code execution” approach is documented in Anthropic\nengineering blogs . Chain-of-Thought prompting is validated by Wei et al. . RAG was introduced by\nLewis  et  al.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 22,
+    "start_pos": 1600,
+    "end_pos": 2101,
+    "chunk_index": 142,
+    "metadata": {
+      "char_count": 499,
+      "word_count": 76
+    }
+  },
+  {
+    "id": "c679b70c-cedf-48f1-861f-6ae70bee7f6d",
+    "text": "logs . Chain-of-Thought prompting is validated by Wei et al. . RAG was introduced by\nLewis  et  al.  (NeurIPS  2020) .  Microsoft’s  documentation  provides  guidance  on  fine-tuning  (Azure\nFoundry)  and  LoRA .  Azure’s  Vector  Search  overview  explains  using  embeddings  for  RAG .\nOpenAI’s GPT-4 report confirms multimodal (vision+language) capabilities . These and other references\nare cited inline and can be consulted for deeper details on each topic.\nIntroducing the Model Context",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 22,
+    "start_pos": 2000,
+    "end_pos": 2494,
+    "chunk_index": 143,
+    "metadata": {
+      "char_count": 493,
+      "word_count": 71
+    }
+  },
+  {
+    "id": "faddc152-95bb-463d-97d6-db2d88042a6c",
+    "text": "d inline and can be consulted for deeper details on each topic.\nIntroducing the Model Context Protocol \\ Anthropic\nhttps://www.anthropic.com/news/model-context-protocol\nCode execution with MCP: building more efficient AI agents \\ Anthropic\nhttps://www.anthropic.com/engineering/code-execution-with-mcp• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n1\n2 6\n11\n8 7 12\n16\n1\n2\n22",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 22,
+    "start_pos": 2400,
+    "end_pos": 2765,
+    "chunk_index": 144,
+    "metadata": {
+      "char_count": 365,
+      "word_count": 55
+    }
+  },
+  {
+    "id": "33db2813-051a-4216-8389-be943aec856d",
+    "text": "The agentic experience: Is MCP the right tool for your AI future? - Google Developers Blog\nhttps://developers.googleblog.com/the-agentic-experience-is-mcp-the-right-tool-for-your-ai-future/\nAgents - Docs by LangChain\nhttps://docs.langchain.com/oss/javascript/langchain/agents\n[2201.11903] Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\nhttps://arxiv.org/abs/2201.11903\nCustomize a model with fine-tuning - Microsoft Foundry | Microsoft Learn\nhttps://learn.microsoft.",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 23,
+    "start_pos": 0,
+    "end_pos": 489,
+    "chunk_index": 145,
+    "metadata": {
+      "char_count": 489,
+      "word_count": 45
+    }
+  },
+  {
+    "id": "4a9ccd5e-9c7c-4faf-83e6-cf5bde51de7a",
+    "text": "e a model with fine-tuning - Microsoft Foundry | Microsoft Learn\nhttps://learn.microsoft.com/en-us/azure/foundry/openai/how-to/fine-tuning\nFine-tuning · Hugging Face\nhttps://huggingface.co/docs/transformers/en/training\n[2005.11401] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks\nhttps://arxiv.org/abs/2005.11401\nVector Search Overview - Azure AI Search | Microsoft Learn\nhttps://learn.microsoft.com/en-us/azure/search/vector-search-overview\nBuilding Your Own Chatbot using Azure",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 23,
+    "start_pos": 400,
+    "end_pos": 897,
+    "chunk_index": 146,
+    "metadata": {
+      "char_count": 496,
+      "word_count": 42
+    }
+  },
+  {
+    "id": "b27a2dd6-adcc-48bc-a098-90371425a7f6",
+    "text": "rn.microsoft.com/en-us/azure/search/vector-search-overview\nBuilding Your Own Chatbot using Azure OpenAI Capabilities\nhttps://techcommunity.microsoft.com/blog/educatordeveloperblog/building-your-own-chatbot-using-azure-openai-capabilities/\n4260740\nBuilding a Basic Chatbot with Azure OpenAI\nhttps://techcommunity.microsoft.com/blog/educatordeveloperblog/building-a-basic-chatbot-with-azure-openai/4373018\ncdn.openai.com\nhttps://cdn.openai.com/papers/gpt-4.pdf\nSafety & responsibility - OpenAI",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 23,
+    "start_pos": 800,
+    "end_pos": 1292,
+    "chunk_index": 147,
+    "metadata": {
+      "char_count": 491,
+      "word_count": 26
+    }
+  },
+  {
+    "id": "8651dc1c-770a-4a66-8559-7b2b44c690e1",
+    "text": "018\ncdn.openai.com\nhttps://cdn.openai.com/papers/gpt-4.pdf\nSafety & responsibility - OpenAI\nhttps://openai.com/safety/3\n4 520\n6\n7 8 918\n10\n11\n12 13\n14\n15\n16 17\n19\n23",
+    "document_id": "f51fab7f-a045-49f9-b53d-d0e3ca9273c5",
+    "page_number": 23,
+    "start_pos": 1200,
+    "end_pos": 1365,
+    "chunk_index": 148,
+    "metadata": {
+      "char_count": 165,
+      "word_count": 25
+    }
+  }
+]

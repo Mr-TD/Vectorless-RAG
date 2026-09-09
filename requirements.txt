@@ -1,0 +1,28 @@
+# ============================================================
+# Vectorless RAG — Python Dependencies
+# ============================================================
+
+# Core Framework
+flask>=3.0.0
+python-dotenv>=1.0.0
+
+# LLM Client (OpenAI SDK pointing at NVIDIA NIM)
+openai>=3.0.0
+
+# Document Parsing
+PyPDF2>=3.0.0
+
+# Vector Operations (for Traditional RAG cosine similarity)
+numpy>=1.24.0
+
+# Logging
+python-json-logger>=2.0.0
+
+# File handling
+werkzeug>=3.0.0
+
+# UUID generation (stdlib, no install needed)
+# json (stdlib)
+# dataclasses (stdlib)
+# pathlib (stdlib)
+# logging (stdlib)

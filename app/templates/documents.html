@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Documents — Vectorless RAG{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 id="docs-page-title">Your Documents</h1>
+    <p class="page-subtitle">Manage your uploaded documents and their indexes.</p>
+</div>
+
+<div class="documents-grid" id="documents-grid">
+    {% if documents %}
+        {% for doc in documents %}
+        <div class="doc-card" id="doc-card-{{ doc.id }}">
+            <div class="doc-card-header">
+                <div class="doc-icon">
+                    {% if doc.file_type == 'pdf' %}📕{% elif doc.file_type == 'md' %}📝{% else %}📄{% endif %}
+                </div>
+                <div class="doc-info">
+                    <h3 class="doc-name" title="{{ doc.filename }}">{{ doc.filename }}</h3>
+                    <span class="doc-date">{{ doc.upload_time[:10] }}</span>
+                </div>
+                <div class="doc-status">
+                    <span class="status-badge status-{{ doc.status }}">{{ doc.status }}</span>
+                </div>
+            </div>
+            <div class="doc-card-body">
+                <div class="doc-meta">
+                    <span class="meta-item">📃 {{ doc.page_count }} pages</span>
+                    <span class="meta-item">💾 {{ (doc.file_size / 1024)|round(1) }} KB</span>
+                    <span class="meta-item">.{{ doc.file_type }}</span>
+                </div>
+                {% if doc.error_message %}
+                <div class="doc-error">⚠️ {{ doc.error_message }}</div>
+                {% endif %}
+            </div>
+            <div class="doc-card-actions">
+                {% if doc.status == 'uploaded' %}
+                <button class="btn btn-primary btn-sm" onclick="buildDocIndex('{{ doc.id }}', this)" id="index-btn-{{ doc.id }}">
+                    🔨 Build Index
+                </button>
+                {% elif doc.status == 'indexed' %}
+                <a href="/query/{{ doc.id }}" class="btn btn-primary btn-sm" id="query-btn-{{ doc.id }}">
+                    🔍 Query
+                </a>
+                <a href="/compare/{{ doc.id }}" class="btn btn-secondary btn-sm" id="compare-btn-{{ doc.id }}" style="border-color: #6366f1;">
+                    ⚔️ Compare
+                </a>
+                <button class="btn btn-secondary btn-sm" onclick="buildDocIndex('{{ doc.id }}', this)" id="reindex-btn-{{ doc.id }}">
+                    🔄 Re-index
+                </button>
+                {% elif doc.status == 'error' %}
+                <button class="btn btn-primary btn-sm" onclick="buildDocIndex('{{ doc.id }}', this)" id="retry-btn-{{ doc.id }}">
+                    🔄 Retry Index
+                </button>
+                {% elif doc.status == 'indexing' %}
+                <button class="btn btn-secondary btn-sm" disabled>
+                    ⏳ Indexing...
+                </button>
+                {% endif %}
+                <button class="btn btn-danger btn-sm" onclick="deleteDoc('{{ doc.id }}')" id="delete-btn-{{ doc.id }}">
+                    🗑️ Delete
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="empty-state" id="empty-state">
+            <div class="empty-icon">📂</div>
+            <h2>No Documents Yet</h2>
+            <p>Upload a document to get started with Vectorless RAG.</p>
+            <a href="{{ url_for('main.index') }}" class="btn btn-primary">📤 Upload Document</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function buildDocIndex(docId, btn) {
+        btn.disabled = true;
+        btn.textContent = '⏳ Building...';
+
+        VectorlessRAG.buildIndex(docId)
+            .then(data => {
+                VectorlessRAG.showToast(`Index built with ${data.data.node_count} nodes!`, 'success');
+                // Reload to update status badges
+                setTimeout(() => location.reload(), 1000);
+            })
+            .catch(err => {
+                btn.disabled = false;
+                btn.textContent = '🔨 Build Index';
+                VectorlessRAG.showToast(`Index build failed: ${err.message}`, 'error');
+            });
+    }
+
+    function deleteDoc(docId) {
+        if (!confirm('Delete this document and its index? This cannot be undone.')) return;
+
+        VectorlessRAG.deleteDocument(docId)
+            .then(() => {
+                VectorlessRAG.showToast('Document deleted.', 'success');
+                const card = document.getElementById(`doc-card-${docId}`);
+                if (card) card.remove();
+                // Show empty state if no more documents
+                const grid = document.getElementById('documents-grid');
+                if (grid.children.length === 0) {
+                    grid.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-icon">📂</div>
+                            <h2>No Documents Yet</h2>
+                            <p>Upload a document to get started.</p>
+                            <a href="/" class="btn btn-primary">📤 Upload Document</a>
+                        </div>
+                    `;
+                }
+            })
+            .catch(err => {
+                VectorlessRAG.showToast(`Delete failed: ${err.message}`, 'error');
+            });
+    }
+</script>
+{% endblock %}

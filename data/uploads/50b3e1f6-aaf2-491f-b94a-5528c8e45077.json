@@ -1,0 +1,14 @@
+{
+  "id": "50b3e1f6-aaf2-491f-b94a-5528c8e45077",
+  "filename": "sample_game_doc.txt",
+  "filepath": "X:\\OngoingProject\\Vectorless RAG\\data/uploads\\50b3e1f6-aaf2-491f-b94a-5528c8e45077_sample_game_doc.txt",
+  "upload_time": "2026-09-09T18:48:01.609009",
+  "status": "indexed",
+  "page_count": 1,
+  "file_type": "txt",
+  "file_size": 123,
+  "pages": [
+    "This is a test document about game building and childhood games in 2026. Vectorless RAG vs Traditional RAG comparison test."
+  ],
+  "error_message": ""
+}
