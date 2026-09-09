@@ -16,8 +16,8 @@ app = create_app(config_name)
 
 if __name__ == "__main__":
     host = os.getenv("FLASK_HOST", "0.0.0.0")
-    port = int(os.getenv("FLASK_PORT", 5000))
-    debug = app.config.get("DEBUG", True)
+    port = int(os.getenv("PORT", os.getenv("FLASK_PORT", 5000)))
+    debug = app.config.get("DEBUG", False if os.getenv("RENDER") else True)
 
     print(f"\n{'='*60}")
     print(f"  Vectorless RAG Server")

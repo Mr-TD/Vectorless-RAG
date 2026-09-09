@@ -5,6 +5,7 @@
 # Core Framework
 flask>=3.0.0
 python-dotenv>=1.0.0
+gunicorn>=21.2.0
 
 # LLM Client (OpenAI SDK pointing at NVIDIA NIM)
 openai>=3.0.0
